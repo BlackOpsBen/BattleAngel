@@ -50,7 +50,7 @@ ParticleSystem:
   ringBufferLoopRange: {x: 0, y: 1}
   looping: 0
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   useRigidbodyForVelocity: 1
@@ -169,9 +169,9 @@ ParticleSystem:
         m_RotationOrder: 4
     startSpeed:
       serializedVersion: 2
-      minMaxState: 2
-      scalar: 5
-      minScalar: 5
+      minMaxState: 3
+      scalar: 7
+      minScalar: 3
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -867,7 +867,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0
+      scalar: 100
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -970,66 +970,8 @@ ParticleSystem:
         m_PreInfinity: 2
         m_PostInfinity: 2
         m_RotationOrder: 4
-    m_BurstCount: 1
-    m_Bursts:
-    - serializedVersion: 2
-      time: 0
-      countCurve:
-        serializedVersion: 2
-        minMaxState: 0
-        scalar: 2
-        minScalar: 30
-        maxCurve:
-          serializedVersion: 2
-          m_Curve:
-          - serializedVersion: 3
-            time: 0
-            value: 1
-            inSlope: 0
-            outSlope: 0
-            tangentMode: 0
-            weightedMode: 0
-            inWeight: 0
-            outWeight: 0
-          - serializedVersion: 3
-            time: 1
-            value: 1
-            inSlope: 0
-            outSlope: 0
-            tangentMode: 0
-            weightedMode: 0
-            inWeight: 0
-            outWeight: 0
-          m_PreInfinity: 2
-          m_PostInfinity: 2
-          m_RotationOrder: 4
-        minCurve:
-          serializedVersion: 2
-          m_Curve:
-          - serializedVersion: 3
-            time: 0
-            value: 1
-            inSlope: 0
-            outSlope: 0
-            tangentMode: 0
-            weightedMode: 0
-            inWeight: 0
-            outWeight: 0
-          - serializedVersion: 3
-            time: 1
-            value: 1
-            inSlope: 0
-            outSlope: 0
-            tangentMode: 0
-            weightedMode: 0
-            inWeight: 0
-            outWeight: 0
-          m_PreInfinity: 2
-          m_PostInfinity: 2
-          m_RotationOrder: 4
-      cycleCount: 1
-      repeatInterval: 0.01
-      probability: 1
+    m_BurstCount: 0
+    m_Bursts: []
   SizeModule:
     enabled: 1
     curve:
@@ -3844,7 +3786,7 @@ ParticleSystem:
     radiusScale: 0.001
     collidesWith:
       serializedVersion: 2
-      m_Bits: 64
+      m_Bits: 55
     maxCollisionShapes: 256
     quality: 0
     voxelSize: 0.5
@@ -4875,7 +4817,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2190592359596755482}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 81da43e37a674084180208e3e18059dc, type: 3}
+  m_Script: {fileID: 11500000, guid: 3b2c0952af49f604fa991cef85f22a51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   interval: 0.1
@@ -4886,63 +4828,55 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2190592359596755481}
     m_Modifications:
-    - target: {fileID: 2872165068918572266, guid: eebf5eefa1b516a4e9328e5c53045d3d,
-        type: 3}
+    - target: {fileID: 2872165068918572265, guid: eebf5eefa1b516a4e9328e5c53045d3d, type: 3}
+      propertyPath: InitialModule.gravityModifier.scalar
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2872165068918572266, guid: eebf5eefa1b516a4e9328e5c53045d3d, type: 3}
       propertyPath: m_Name
       value: RedFloorSplatter
       objectReference: {fileID: 0}
-    - target: {fileID: 2872165068918572279, guid: eebf5eefa1b516a4e9328e5c53045d3d,
-        type: 3}
+    - target: {fileID: 2872165068918572279, guid: eebf5eefa1b516a4e9328e5c53045d3d, type: 3}
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2872165068918572279, guid: eebf5eefa1b516a4e9328e5c53045d3d,
-        type: 3}
+    - target: {fileID: 2872165068918572279, guid: eebf5eefa1b516a4e9328e5c53045d3d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2872165068918572279, guid: eebf5eefa1b516a4e9328e5c53045d3d,
-        type: 3}
+    - target: {fileID: 2872165068918572279, guid: eebf5eefa1b516a4e9328e5c53045d3d, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2872165068918572279, guid: eebf5eefa1b516a4e9328e5c53045d3d,
-        type: 3}
+    - target: {fileID: 2872165068918572279, guid: eebf5eefa1b516a4e9328e5c53045d3d, type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2872165068918572279, guid: eebf5eefa1b516a4e9328e5c53045d3d,
-        type: 3}
+    - target: {fileID: 2872165068918572279, guid: eebf5eefa1b516a4e9328e5c53045d3d, type: 3}
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 2872165068918572279, guid: eebf5eefa1b516a4e9328e5c53045d3d,
-        type: 3}
+    - target: {fileID: 2872165068918572279, guid: eebf5eefa1b516a4e9328e5c53045d3d, type: 3}
       propertyPath: m_LocalRotation.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2872165068918572279, guid: eebf5eefa1b516a4e9328e5c53045d3d,
-        type: 3}
+    - target: {fileID: 2872165068918572279, guid: eebf5eefa1b516a4e9328e5c53045d3d, type: 3}
       propertyPath: m_LocalRotation.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2872165068918572279, guid: eebf5eefa1b516a4e9328e5c53045d3d,
-        type: 3}
+    - target: {fileID: 2872165068918572279, guid: eebf5eefa1b516a4e9328e5c53045d3d, type: 3}
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2872165068918572279, guid: eebf5eefa1b516a4e9328e5c53045d3d,
-        type: 3}
+    - target: {fileID: 2872165068918572279, guid: eebf5eefa1b516a4e9328e5c53045d3d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2872165068918572279, guid: eebf5eefa1b516a4e9328e5c53045d3d,
-        type: 3}
+    - target: {fileID: 2872165068918572279, guid: eebf5eefa1b516a4e9328e5c53045d3d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2872165068918572279, guid: eebf5eefa1b516a4e9328e5c53045d3d,
-        type: 3}
+    - target: {fileID: 2872165068918572279, guid: eebf5eefa1b516a4e9328e5c53045d3d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
@@ -4950,13 +4884,11 @@ PrefabInstance:
   m_SourcePrefab: {fileID: 100100000, guid: eebf5eefa1b516a4e9328e5c53045d3d, type: 3}
 --- !u!4 &9193619604160397536 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 2872165068918572279, guid: eebf5eefa1b516a4e9328e5c53045d3d,
-    type: 3}
+  m_CorrespondingSourceObject: {fileID: 2872165068918572279, guid: eebf5eefa1b516a4e9328e5c53045d3d, type: 3}
   m_PrefabInstance: {fileID: 6362942751530615831}
   m_PrefabAsset: {fileID: 0}
 --- !u!198 &9193619604160397566 stripped
 ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 2872165068918572265, guid: eebf5eefa1b516a4e9328e5c53045d3d,
-    type: 3}
+  m_CorrespondingSourceObject: {fileID: 2872165068918572265, guid: eebf5eefa1b516a4e9328e5c53045d3d, type: 3}
   m_PrefabInstance: {fileID: 6362942751530615831}
   m_PrefabAsset: {fileID: 0}

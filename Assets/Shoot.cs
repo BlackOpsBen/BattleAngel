@@ -63,9 +63,22 @@ public class Shoot : MonoBehaviour
 
         if (Physics.Raycast(muzzle.position, muzzle.forward, out hit, maxRange))
         {
-            Debug.Log("Hit " + hit.transform.name);
+            ProcessHit(hit);
         }
 
-        Debug.DrawRay(muzzle.position, muzzle.forward, Color.red, 0.1f, true);
+        Debug.DrawRay(muzzle.position, muzzle.forward * maxRange, Color.red, 0.1f, true);
+    }
+
+    private static void ProcessHit(RaycastHit hit)
+    {
+        Debug.Log("Hit " + hit.transform.name);
+
+        HitFX hitFx;
+
+        if (hitFx = hit.transform.GetComponent<HitFX>())
+        {
+            Vector3 flatHitNormal = new Vector3(hit.normal.x, 0.0f, hit.normal.z);
+            hitFx.Play(hit.point, Quaternion.LookRotation(flatHitNormal, Vector3.up));
+        }
     }
 }
