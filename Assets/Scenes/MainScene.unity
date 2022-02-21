@@ -352,6 +352,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1035479526}
   - component: {fileID: 1035479527}
+  - component: {fileID: 1035479528}
   m_Layer: 0
   m_Name: CameraRoot
   m_TagString: Untagged
@@ -388,6 +389,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 586950415}
   lerpSpeed: 5
+--- !u!114 &1035479528
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1035479525}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fd3ec66af212c74892bab56892658bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1636275231
 GameObject:
   m_ObjectHideFlags: 0
@@ -548,6 +561,7 @@ GameObject:
   - component: {fileID: 10384129568630319}
   - component: {fileID: 10384129568630321}
   - component: {fileID: 10384129568630320}
+  - component: {fileID: 10384129568630322}
   m_Layer: 0
   m_Name: PlayerCharacter
   m_TagString: Untagged
@@ -628,11 +642,58 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 4efd9d9e-c7de-4cbb-8e02-a77ac58fa81f
     m_ActionName: Default/Move[/XInputControllerWindows/leftStick]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1035479528}
+        m_TargetAssemblyTypeName: CamRotateView, Assembly-CSharp
+        m_MethodName: OnRotateView
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 209ae10f-e309-43b3-8357-a5aaa1bbb931
+    m_ActionName: Default/RotateView[/XInputControllerWindows/leftShoulder,/XInputControllerWindows/rightShoulder]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 10384129568630322}
+        m_TargetAssemblyTypeName: Aim, Assembly-CSharp
+        m_MethodName: OnAim
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 89ed8ddd-aa74-4f27-885d-a68165871121
+    m_ActionName: Default/Aim[/XInputControllerWindows/rightStick]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Default
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &10384129568630322
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 10384129568630318}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35504ed795d0b5240aa77578839a731d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  turnSpeed: 5
+  acceleration: 5
+  minAngleThreshold: 5
 --- !u!1 &11935363091985920
 GameObject:
   m_ObjectHideFlags: 0
