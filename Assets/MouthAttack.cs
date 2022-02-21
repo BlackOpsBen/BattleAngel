@@ -31,10 +31,7 @@ public class MouthAttack : MonoBehaviour
     {
         float distance = Vector3.Distance(transform.position, movement.GetTargetPlayer().position);
 
-        if (distance < attackDistance)
-        {
-            isAttacking = true;
-        }
+        isAttacking = distance < attackDistance;
 
         animator.SetBool("isAttacking", isAttacking);
     }

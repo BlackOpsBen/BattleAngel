@@ -23,7 +23,7 @@ public class ParticleCollisionSound : MonoBehaviour
         {
             if (ps.particleCount != currentNumParticles)
             {
-                //AudioManager.Instance.PlayGoreAtPosition(transform.position); // TODO play sound
+                AudioManager.Instance.PlaySound("SC_Splat", transform);
                 timer = interval;
             }
         }
