@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class EnemyMovement : MonoBehaviour
+public class NavMeshMovement : MonoBehaviour
 {
     private NavMeshAgent navMeshAgent;
 
@@ -18,5 +18,10 @@ public class EnemyMovement : MonoBehaviour
     private void Update()
     {
         navMeshAgent.destination = targetPlayer.position;
+    }
+
+    public Transform GetTargetPlayer()
+    {
+        return targetPlayer;
     }
 }

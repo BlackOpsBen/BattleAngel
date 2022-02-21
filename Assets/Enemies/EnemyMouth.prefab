@@ -934,6 +934,7 @@ GameObject:
   - component: {fileID: 7810743426224538321}
   - component: {fileID: 919132149173123579}
   - component: {fileID: 919132149173123580}
+  - component: {fileID: 3985876050448960474}
   m_Layer: 0
   m_Name: EnemyMouth
   m_TagString: Untagged
@@ -1010,6 +1011,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e100758306329e54181caccbe303ed5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &3985876050448960474
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3588992574894457361}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86a677c29d485194aafecec91e4d17b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackDistance: 10
+  aimSpeed: 5
 --- !u!1 &3692421840005796307
 GameObject:
   m_ObjectHideFlags: 0
