@@ -7,6 +7,7 @@ public class MouthAttack : MonoBehaviour
 {
     [SerializeField] private float attackDistance = 10.0f;
     [SerializeField] private float aimSpeed = 1.0f;
+    [SerializeField] private ParticleSystem spitPFX;
 
     private Animator animator;
 
@@ -50,6 +51,6 @@ public class MouthAttack : MonoBehaviour
 
     public void OnSpitEvent()
     {
-        Debug.Log("Spit!");
+        spitPFX.Play();
     }
 }
