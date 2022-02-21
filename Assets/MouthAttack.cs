@@ -47,4 +47,9 @@ public class MouthAttack : MonoBehaviour
             transform.rotation = lerpedLook;
         }
     }
+
+    public void OnSpitEvent()
+    {
+        Debug.Log("Spit!");
+    }
 }
