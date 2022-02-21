@@ -11,6 +11,8 @@ public class Movement : MonoBehaviour
 
     private CharacterController characterController;
 
+    private Animator animator;
+
     private Vector2 movementRawInput;
     private Vector3 moveDirection;
     private Vector3 relativeForward;
@@ -20,6 +22,7 @@ public class Movement : MonoBehaviour
     private void Start()
     {
         characterController = GetComponent<CharacterController>();
+        animator = GetComponent<Animator>();
         lerpMove = Vector3.zero;
     }
 
@@ -33,8 +36,7 @@ public class Movement : MonoBehaviour
         SetRelativeDirections();
         SetMoveDirection();
         PerformMove();
-
-        //characterController.Move(move * Time.deltaTime * moveSpeed);
+        Animate();
     }
 
     private void SetRelativeDirections()
@@ -60,5 +62,13 @@ public class Movement : MonoBehaviour
         Vector3 relativeMoveDirection = relativeForward * lerpMove.z + relativeRight * lerpMove.x;
 
         characterController.Move(relativeMoveDirection * Time.deltaTime * moveSpeed);
+    }
+
+    private void Animate()
+    {
+        Vector3 relMovDir = transform.InverseTransformDirection(relativeForward * lerpMove.z + relativeRight * lerpMove.x);
+
+        animator.SetFloat("x", relMovDir.x);
+        animator.SetFloat("y", relMovDir.z);
     }
 }
