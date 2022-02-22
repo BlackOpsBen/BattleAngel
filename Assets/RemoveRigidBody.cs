@@ -24,7 +24,8 @@ public class RemoveRigidBody : MonoBehaviour
             if (!isDone && rb.velocity.magnitude < movementThreshold)
             {
                 Destroy(rb);
-                GetComponent<Collider>().isTrigger = true;
+                Destroy(GetComponent<Collider>());
+                //GetComponent<Collider>().isTrigger = true;
                 isDone = true;
             }
         }

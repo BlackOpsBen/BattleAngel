@@ -629,7 +629,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   skinnedMeshRenderer: {fileID: 1202471515606630357}
   toggleWhenRevealeds:
-  - {fileID: 6119653448697521115}
   - {fileID: 4885446231324844778}
   colliderToToggle: {fileID: 4884429070189388844}
   toggleThreshold: 0.3
