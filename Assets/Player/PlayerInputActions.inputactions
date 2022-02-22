@@ -25,7 +25,7 @@
                     "name": "Aim",
                     "type": "Value",
                     "id": "89ed8ddd-aa74-4f27-885d-a68165871121",
-                    "expectedControlType": "Stick",
+                    "expectedControlType": "Vector2",
                     "processors": "",
                     "interactions": ""
                 },
@@ -33,6 +33,14 @@
                     "name": "Shoot",
                     "type": "Button",
                     "id": "58f85129-d2cc-4bcd-a592-cbe77995c1c2",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "Jump",
+                    "type": "Button",
+                    "id": "24f6b8d1-478d-4221-84aa-2ffa42d5618c",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
@@ -239,6 +247,17 @@
                 },
                 {
                     "name": "",
+                    "id": "4f623604-cbda-48fc-8b7e-02ff45816bfd",
+                    "path": "<Mouse>/delta",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard",
+                    "action": "Aim",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "983f8a6b-dfe1-493e-b9c6-fd969516ac14",
                     "path": "<Gamepad>/rightTrigger",
                     "interactions": "",
@@ -256,6 +275,39 @@
                     "processors": "",
                     "groups": "Keyboard",
                     "action": "Shoot",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "8bd3b26c-7e5c-49bd-8019-c286f438dd7d",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard",
+                    "action": "Shoot",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "0d190033-29cc-4702-8321-0a666b7393bb",
+                    "path": "<Gamepad>/buttonSouth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Jump",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "ac5a0f44-2c4d-4101-86fc-3a1bcfef2e07",
+                    "path": "<Keyboard>/shift",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard",
+                    "action": "Jump",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
@@ -281,6 +333,11 @@
                 {
                     "devicePath": "<Keyboard>",
                     "isOptional": false,
+                    "isOR": false
+                },
+                {
+                    "devicePath": "<Mouse>",
+                    "isOptional": true,
                     "isOR": false
                 }
             ]

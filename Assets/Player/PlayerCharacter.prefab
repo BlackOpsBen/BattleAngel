@@ -1901,6 +1901,8 @@ GameObject:
   - component: {fileID: 5721570197601597738}
   - component: {fileID: 5721570197601597736}
   - component: {fileID: 10384129568630323}
+  - component: {fileID: 5995211878939484548}
+  - component: {fileID: 1637613227794876010}
   m_Layer: 0
   m_Name: PlayerCharacter
   m_TagString: Untagged
@@ -2101,7 +2103,39 @@ MonoBehaviour:
   shakePreset: {fileID: 11400000, guid: dbe395895b7e38a40ae9202aad9b0f87, type: 2}
   muzzle: {fileID: 5986096585773049294}
   muzzlePFX: {fileID: 829325340896436898}
+  bulletTrail: {fileID: 360212582972704351, guid: eed5cac33c148fa4dbc596d2574a759c, type: 3}
+  impactPFX: {fileID: 3030169429997309139, guid: eaa94e0772f268145a9e2d2a25c60c07, type: 3}
   maxRange: 100
+  spread: {x: 0.1, y: 0.1, z: 0.1}
+--- !u!114 &5995211878939484548
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5721570197601597748}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b9591aa18804a24ca8f700964df598c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHP: 100
+--- !u!114 &1637613227794876010
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5721570197601597748}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3d98a87f72e9e64cafac9f97839ec4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  livingObjects: []
+  deadObjects: []
+  explosiveForce: 1
+  explosiveRadius: 5
 --- !u!1 &5722274873781299482
 GameObject:
   m_ObjectHideFlags: 0

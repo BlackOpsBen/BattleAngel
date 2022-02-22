@@ -19,7 +19,7 @@ public class Aim : MonoBehaviour
 
     private void Start()
     {
-        slerpLook = Vector3.zero;
+        slerpLook = Vector3.forward;
     }
 
     public void OnAim(InputAction.CallbackContext context)

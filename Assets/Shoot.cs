@@ -11,7 +11,10 @@ public class Shoot : MonoBehaviour
     [SerializeField] private ShakePreset shakePreset;
     [SerializeField] private Transform muzzle;
     [SerializeField] private PlayAllSubPFX muzzlePFX;
+    [SerializeField] private TrailRenderer bulletTrail;
+    [SerializeField] private GameObject impactPFX;
     [SerializeField] private float maxRange = 100.0f;
+    [SerializeField] private Vector3 spread = new Vector3(1f, 1f, 1f);
 
     private float shotTimer = 0.0f;
 
@@ -60,13 +63,53 @@ public class Shoot : MonoBehaviour
         Shaker.ShakeAll(shakePreset);
 
         RaycastHit hit;
+        Vector3 direction = GetShotDirection();
 
-        if (Physics.Raycast(muzzle.position, muzzle.forward, out hit, maxRange))
+        if (Physics.Raycast(muzzle.position, direction, out hit, maxRange))
         {
+            TrailRenderer trail = Instantiate(bulletTrail, muzzle.position, Quaternion.identity);
+
+            StartCoroutine(SpawnTrail(trail, hit));
+
             ProcessHit(hit);
         }
 
-        Debug.DrawRay(muzzle.position, muzzle.forward * maxRange, Color.red, 0.1f, true);
+        Debug.DrawRay(muzzle.position, direction * maxRange, Color.red, 0.1f, true);
+    }
+
+    private Vector3 GetShotDirection()
+    {
+        Vector3 direction = muzzle.forward;
+
+        direction += new Vector3(
+            UnityEngine.Random.Range(-spread.x, spread.x),
+            UnityEngine.Random.Range(-spread.y, spread.y),
+            UnityEngine.Random.Range(-spread.z, spread.z)
+        );
+
+        direction.Normalize();
+
+        return direction;
+    }
+
+    private IEnumerator SpawnTrail(TrailRenderer trail, RaycastHit hit)
+    {
+        float time = 0.0f;
+        Vector3 startPosition = trail.transform.position;
+
+        while (time < 1)
+        {
+            trail.transform.position = Vector3.Lerp(startPosition, hit.point, time);
+            time += Time.deltaTime;
+
+            yield return null;
+        }
+
+        trail.transform.position = hit.point;
+
+        Instantiate(impactPFX, hit.point, Quaternion.LookRotation(hit.normal));
+
+        Destroy(trail.gameObject, trail.time);
     }
 
     private static void ProcessHit(RaycastHit hit)
