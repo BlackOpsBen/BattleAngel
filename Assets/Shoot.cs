@@ -64,15 +64,17 @@ public class Shoot : MonoBehaviour
 
         RaycastHit hit;
         Vector3 direction = GetShotDirection();
+        Vector3 destination = muzzle.position + direction * maxRange;
 
         if (Physics.Raycast(muzzle.position, direction, out hit, maxRange))
         {
-            TrailRenderer trail = Instantiate(bulletTrail, muzzle.position, Quaternion.identity);
-
-            StartCoroutine(SpawnTrail(trail, hit));
-
+            destination = hit.point;
             ProcessHit(hit);
         }
+
+        TrailRenderer trail = Instantiate(bulletTrail, muzzle.position, Quaternion.identity);
+
+        StartCoroutine(SpawnTrail(trail, destination));
 
         Debug.DrawRay(muzzle.position, direction * maxRange, Color.red, 0.1f, true);
     }
@@ -92,27 +94,25 @@ public class Shoot : MonoBehaviour
         return direction;
     }
 
-    private IEnumerator SpawnTrail(TrailRenderer trail, RaycastHit hit)
+    private IEnumerator SpawnTrail(TrailRenderer trail, Vector3 destination)
     {
         float time = 0.0f;
         Vector3 startPosition = trail.transform.position;
 
         while (time < 1)
         {
-            trail.transform.position = Vector3.Lerp(startPosition, hit.point, time);
-            time += Time.deltaTime;
+            trail.transform.position = Vector3.Lerp(startPosition, destination, time);
+            time += Time.deltaTime / trail.time;
 
             yield return null;
         }
 
-        trail.transform.position = hit.point;
-
-        Instantiate(impactPFX, hit.point, Quaternion.LookRotation(hit.normal));
+        trail.transform.position = destination;
 
         Destroy(trail.gameObject, trail.time);
     }
 
-    private static void ProcessHit(RaycastHit hit)
+    private void ProcessHit(RaycastHit hit)
     {
         Debug.Log("Hit " + hit.transform.name);
 
@@ -123,5 +123,7 @@ public class Shoot : MonoBehaviour
             Vector3 flatHitNormal = new Vector3(hit.normal.x, 0.0f, hit.normal.z);
             hitFx.Play(hit.point, Quaternion.LookRotation(flatHitNormal, Vector3.up));
         }
+
+        Instantiate(impactPFX, hit.point, Quaternion.LookRotation(hit.normal));
     }
 }

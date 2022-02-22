@@ -2475,6 +2475,14 @@ PrefabInstance:
     m_TransformParent: {fileID: 4216909769327843499}
     m_Modifications:
     - target: {fileID: 2190592359596755480, guid: 994025cba709fa549a1d7b35717b4d43, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.b
+      value: 0.47457027
+      objectReference: {fileID: 0}
+    - target: {fileID: 2190592359596755480, guid: 994025cba709fa549a1d7b35717b4d43, type: 3}
+      propertyPath: InitialModule.startColor.minColor.b
+      value: 0.25647953
+      objectReference: {fileID: 0}
+    - target: {fileID: 2190592359596755480, guid: 994025cba709fa549a1d7b35717b4d43, type: 3}
       propertyPath: EmissionModule.m_Bursts.Array.data[0].countCurve.scalar
       value: 3
       objectReference: {fileID: 0}
@@ -2488,7 +2496,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2190592359596755481, guid: 994025cba709fa549a1d7b35717b4d43, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 1.94
       objectReference: {fileID: 0}
     - target: {fileID: 2190592359596755481, guid: 994025cba709fa549a1d7b35717b4d43, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2525,6 +2533,14 @@ PrefabInstance:
     - target: {fileID: 2190592359596755482, guid: 994025cba709fa549a1d7b35717b4d43, type: 3}
       propertyPath: m_Name
       value: RedBloodHitPFX
+      objectReference: {fileID: 0}
+    - target: {fileID: 9193619604160397566, guid: 994025cba709fa549a1d7b35717b4d43, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.b
+      value: 0.4486699
+      objectReference: {fileID: 0}
+    - target: {fileID: 9193619604160397566, guid: 994025cba709fa549a1d7b35717b4d43, type: 3}
+      propertyPath: InitialModule.startColor.minColor.b
+      value: 0.2703969
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 994025cba709fa549a1d7b35717b4d43, type: 3}

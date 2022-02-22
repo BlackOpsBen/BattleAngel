@@ -9,10 +9,12 @@ public class Health : MonoBehaviour
     private bool invincible = false;
 
     private IDie deathBehavior;
+    private IHurt hurtBehavior;
 
     private void Start()
     {
         currentHP = maxHP;
+        hurtBehavior = GetComponent<IHurt>();
         deathBehavior = GetComponent<IDie>();
     }
 
@@ -21,6 +23,12 @@ public class Health : MonoBehaviour
         if (!invincible)
         {
             currentHP -= damage;
+
+            if (hurtBehavior != null)
+            {
+                hurtBehavior.Hurt();
+            }
+
             if (currentHP <= 0)
             {
                 Die();

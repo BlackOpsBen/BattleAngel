@@ -3787,7 +3787,7 @@ ParticleSystem:
     radiusScale: 0.001
     collidesWith:
       serializedVersion: 2
-      m_Bits: 55
+      m_Bits: 183
     maxCollisionShapes: 256
     quality: 0
     voxelSize: 0.5
@@ -4834,6 +4834,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfe7a12d8152ba84a8b5c8d3c113b5e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damageAmount: 1
 --- !u!1 &3959812002944889748
 GameObject:
   m_ObjectHideFlags: 0
