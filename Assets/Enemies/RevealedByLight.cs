@@ -40,7 +40,7 @@ public class RevealedByLight : MonoBehaviour
 
     private void Update()
     {
-        blend += Time.deltaTime * direction;
+        blend += Time.deltaTime * direction * blendSpeed;
         blend = Mathf.Clamp01(blend);
 
         material.SetFloat(propertyName, Mathf.Lerp(minCutoffHeight, maxCutoffHeight, blend));

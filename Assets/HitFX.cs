@@ -16,6 +16,6 @@ public class HitFX : MonoBehaviour
             gameObj.GetComponent<ParticleSystem>().Play();
         }
 
-        AudioManager.Instance.PlaySound(hitSoundName, transform);
+        AudioManager.Instance.PlaySound(hitSoundName);
     }    
 }

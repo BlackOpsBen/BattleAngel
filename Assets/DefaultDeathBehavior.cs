@@ -21,7 +21,7 @@ public class DefaultDeathBehavior : MonoBehaviour, IDie
         }
     }
 
-    public void Die()
+    public virtual void Die()
     {
         foreach (GameObject livingObject in livingObjects)
         {

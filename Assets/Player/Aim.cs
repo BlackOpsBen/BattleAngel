@@ -6,9 +6,7 @@ using UnityEngine.InputSystem;
 
 public class Aim : MonoBehaviour
 {
-    [SerializeField] float turnSpeed = 5.0f;
     [SerializeField] float acceleration = 5.0f;
-    [SerializeField] float minAngleThreshold = 5.0f;
 
     private Vector2 aimRawInput;
     private Vector3 relativeForward;

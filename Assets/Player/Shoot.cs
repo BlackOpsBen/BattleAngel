@@ -124,8 +124,6 @@ public class Shoot : MonoBehaviour
 
     private void ProcessHit(RaycastHit hit)
     {
-        Debug.Log("Hit " + hit.transform.name);
-
         HitFX hitFx;
 
         if (hitFx = hit.transform.GetComponent<HitFX>())
