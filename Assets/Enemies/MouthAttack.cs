@@ -48,6 +48,11 @@ public class MouthAttack : MonoBehaviour, IToggleWhenRevealed
         }
     }
 
+    public void OnGurgleEvent()
+    {
+        AudioManager.Instance.PlaySound("SC_Gurgle");
+    }
+
     public void OnSpitEvent()
     {
         spitPFX.Play();
