@@ -629,6 +629,7 @@ MonoBehaviour:
   toggleWhenRevealeds:
   - {fileID: 6119653448697521115}
   - {fileID: 4885446231324844778}
+  colliderToToggle: {fileID: 4884429070189388844}
   blendSpeed: 2
 --- !u!114 &7075891414644527653
 MonoBehaviour:

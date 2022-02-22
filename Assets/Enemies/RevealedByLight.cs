@@ -7,6 +7,8 @@ public class RevealedByLight : MonoBehaviour
 {
     [SerializeField] private SkinnedMeshRenderer skinnedMeshRenderer;
     [SerializeField] private List<MonoBehaviour> toggleWhenRevealeds = new List<MonoBehaviour>();
+    [SerializeField] private Collider colliderToToggle;
+    [SerializeField] private float toggleThreshold = 0.3f;
 
     private string tagTarget = "Target";
     private string tagDefault = "Enemy";
@@ -53,7 +55,7 @@ public class RevealedByLight : MonoBehaviour
 
         material.SetFloat(propertyName, Mathf.Lerp(minCutoffHeight, maxCutoffHeight, blend));
 
-        if (blend < 0.1f)
+        if (blend < toggleThreshold)
         {
             SetToggles(false);
             gameObject.layer = 2;
@@ -80,6 +82,8 @@ public class RevealedByLight : MonoBehaviour
             IToggleWhenRevealed toggleable = (IToggleWhenRevealed)item;
             toggleable.ToggleActive(active);
         }
+
+        colliderToToggle.isTrigger = !active;
     }
 
     private void SetTag(bool active)
