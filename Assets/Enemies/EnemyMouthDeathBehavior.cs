@@ -16,8 +16,6 @@ public class EnemyMouthDeathBehavior : DefaultDeathBehavior
 
         target.tag = "Enemy";
 
-        AudioManager.Instance.PlaySound("SC_EnemyDeath");
-
         base.Die();
     }
 }

@@ -12,7 +12,7 @@ public class PlayerHurtBehavior : MonoBehaviour, IHurt
     public void Hurt()
     {
         bloodPFX.Play();
-        AudioManager.Instance.PlayDialog("player", hurtDialogName, INTERRUPT_MODE: AudioManager.INTERRUPT_OVERLAP);
+        AudioManager.Instance.PlayDialog(AudioManager.PLAYERNAME, hurtDialogName, INTERRUPT_MODE: AudioManager.INTERRUPT_OVERLAP);
         Shaker.ShakeAll(cameraShakePreset);
     }
 }

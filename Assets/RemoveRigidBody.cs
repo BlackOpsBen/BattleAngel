@@ -5,7 +5,7 @@ using UnityEngine;
 public class RemoveRigidBody : MonoBehaviour
 {
     public float movementThreshold = .01f;
-    public float minDelay = 1f;
+    public float minDelay = 2f;
     private float timer = 0f;
     Rigidbody rb;
     private bool isDone = false;

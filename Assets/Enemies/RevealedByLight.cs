@@ -19,7 +19,7 @@ public class RevealedByLight : MonoBehaviour
     private Material material;
 
     private float minCutoffHeight = -0.45f;
-    private float maxCutoffHeight = 4.83f;
+    private float maxCutoffHeight = 5.0f;
 
     private float blend = 0.0f;
 

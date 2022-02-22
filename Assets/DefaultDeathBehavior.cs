@@ -85,5 +85,7 @@ public class DefaultDeathBehavior : MonoBehaviour, IDie
 
             deadObjects[i].AddComponent<RemoveRigidBody>();
         }
+
+        AudioManager.Instance.PlaySound("SC_EnemyDeath");
     }
 }
