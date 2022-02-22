@@ -17,7 +17,7 @@ public class Shoot : MonoBehaviour
     [SerializeField] private float maxRange = 100.0f;
     [SerializeField] private Vector3 spread = new Vector3(1f, 1f, 1f);
 
-    private float shotTimer = 0.0f;
+    private float shotTimer = float.MaxValue;
 
     private bool isFiring = false;
 
@@ -58,7 +58,7 @@ public class Shoot : MonoBehaviour
         }
         else
         {
-            shotTimer = 0.0f;
+            shotTimer = float.MaxValue;
         }
     }
 
