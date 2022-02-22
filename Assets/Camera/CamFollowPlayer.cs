@@ -4,9 +4,14 @@ using UnityEngine;
 
 public class CamFollowPlayer : MonoBehaviour
 {
-    [SerializeField] private Transform target;
+    private Transform target;
 
     [SerializeField] private float lerpSpeed = 5f;
+
+    private void Awake()
+    {
+        target = FindObjectOfType<Movement>().transform;
+    }
 
     private void Update()
     {

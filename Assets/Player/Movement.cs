@@ -76,4 +76,9 @@ public class Movement : MonoBehaviour
         animator.SetFloat("x", relMovDir.x);
         animator.SetFloat("y", relMovDir.z);
     }
+
+    public bool GetIsMoving()
+    {
+        return movementRawInput.sqrMagnitude > 0.1f;
+    }
 }
