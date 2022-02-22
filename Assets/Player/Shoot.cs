@@ -20,6 +20,13 @@ public class Shoot : MonoBehaviour
 
     private bool isFiring = false;
 
+    private AimAssist aimAssist;
+
+    private void Awake()
+    {
+        aimAssist = GetComponent<AimAssist>();
+    }
+
     public void OnShoot(InputAction.CallbackContext context)
     {
         if (context.performed)
@@ -81,7 +88,9 @@ public class Shoot : MonoBehaviour
 
     private Vector3 GetShotDirection()
     {
-        Vector3 direction = muzzle.forward;
+        Vector3 direction = aimAssist.GetTarget().position - muzzle.position;
+
+        direction.Normalize();
 
         direction += new Vector3(
             UnityEngine.Random.Range(-spread.x, spread.x),

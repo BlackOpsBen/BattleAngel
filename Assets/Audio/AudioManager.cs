@@ -134,9 +134,9 @@ public class AudioManager : MonoBehaviour
     /// </summary>
     public void PlaySoundLoop(string name, string loopId, string mixerGroupOverride = "")
     {
-        if (ProcessPlaySound(name, is3D: false, isSoundCue: false, specificMixerGroup: false, isLooping: true, uniqueId: loopId, mixerGroupName: mixerGroupOverride) == null)
+        if (ProcessPlaySound(name, is3D: false, isSoundCue: false, specificMixerGroup: true, isLooping: true, uniqueId: loopId, mixerGroupName: mixerGroupOverride) == null)
         {
-            ProcessPlaySound(name, is3D: false, isSoundCue: true, specificMixerGroup: false, isLooping: true, uniqueId: loopId, mixerGroupName: mixerGroupOverride);
+            ProcessPlaySound(name, is3D: false, isSoundCue: true, specificMixerGroup: true, isLooping: true, uniqueId: loopId, mixerGroupName: mixerGroupOverride);
         }
     }
 
@@ -146,9 +146,9 @@ public class AudioManager : MonoBehaviour
     /// </summary>
     public void PlaySound(string name, Transform parent, string mixerGroupOverride = "")
     {
-        if (ProcessPlaySound(name, is3D: true, isSoundCue: false, specificMixerGroup: false, isLooping: false, mixerGroupName: mixerGroupOverride, parent: parent) == null)
+        if (ProcessPlaySound(name, is3D: true, isSoundCue: false, specificMixerGroup: true, isLooping: false, mixerGroupName: mixerGroupOverride, parent: parent) == null)
         {
-            ProcessPlaySound(name, is3D: true, isSoundCue: true, specificMixerGroup: false, isLooping: false, mixerGroupName: mixerGroupOverride, parent: parent);
+            ProcessPlaySound(name, is3D: true, isSoundCue: true, specificMixerGroup: true, isLooping: false, mixerGroupName: mixerGroupOverride, parent: parent);
         }
     }
 
@@ -158,9 +158,9 @@ public class AudioManager : MonoBehaviour
     /// </summary>
     public void PlaySoundLoop(string name, Transform parent, string loopId, string mixerGroupOverride = "")
     {
-        if (ProcessPlaySound(name, is3D: true, isSoundCue: false, specificMixerGroup: false, isLooping: true, mixerGroupName: mixerGroupOverride, uniqueId: loopId, parent: parent) == null)
+        if (ProcessPlaySound(name, is3D: true, isSoundCue: false, specificMixerGroup: true, isLooping: true, mixerGroupName: mixerGroupOverride, uniqueId: loopId, parent: parent) == null)
         {
-            ProcessPlaySound(name, is3D: true, isSoundCue: true, specificMixerGroup: false, isLooping: true, mixerGroupName: mixerGroupOverride, uniqueId: loopId, parent: parent);
+            ProcessPlaySound(name, is3D: true, isSoundCue: true, specificMixerGroup: true, isLooping: true, mixerGroupName: mixerGroupOverride, uniqueId: loopId, parent: parent);
         }
     }
 
