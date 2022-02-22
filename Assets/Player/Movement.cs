@@ -9,7 +9,9 @@ public class Movement : MonoBehaviour
     [SerializeField] private float moveSpeed = 10f;
     [SerializeField] private float acceleration = 10f;
 
-    private CharacterController characterController;
+    private Rigidbody rb;
+
+    //private CharacterController characterController;
 
     private Animator animator;
 
@@ -21,7 +23,8 @@ public class Movement : MonoBehaviour
 
     private void Start()
     {
-        characterController = GetComponent<CharacterController>();
+        rb = GetComponent<Rigidbody>();
+        //characterController = GetComponent<CharacterController>();
         animator = GetComponent<Animator>();
         lerpMove = Vector3.zero;
     }
@@ -61,7 +64,9 @@ public class Movement : MonoBehaviour
 
         Vector3 relativeMoveDirection = relativeForward * lerpMove.z + relativeRight * lerpMove.x;
 
-        characterController.Move(relativeMoveDirection * Time.deltaTime * moveSpeed);
+        transform.position += relativeMoveDirection * Time.deltaTime * moveSpeed;
+
+        //characterController.Move(relativeMoveDirection * Time.deltaTime * moveSpeed);
     }
 
     private void Animate()

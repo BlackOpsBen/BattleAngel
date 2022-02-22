@@ -411,6 +411,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e100758306329e54181caccbe303ed5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  targetPlayer: {fileID: 0}
 --- !u!114 &4885446231324844778
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -487,6 +488,7 @@ MonoBehaviour:
   explosiveRadius: 5
   scriptsToDisable:
   - {fileID: 4885446231324844778}
+  - {fileID: 6119653448697521115}
   target: {fileID: 6136341151007857403}
 --- !u!54 &9011937250320656255
 Rigidbody:
@@ -630,6 +632,7 @@ MonoBehaviour:
   - {fileID: 6119653448697521115}
   - {fileID: 4885446231324844778}
   colliderToToggle: {fileID: 4884429070189388844}
+  toggleThreshold: 0.3
   blendSpeed: 2
 --- !u!114 &7075891414644527653
 MonoBehaviour:
