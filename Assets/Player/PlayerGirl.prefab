@@ -929,7 +929,9 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 119
-  groundPound: {fileID: 0}
+  groundPound: {fileID: 4400854163783693973}
+  apexHeight: 0
+  landHeight: 0
   isInAir: 0
   newState: 0
 --- !u!114 &4400854163783693973
@@ -944,7 +946,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3afbc72b7c002474fbc8c5065b1e209b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minJumpHeight: 1
+  minJumpHeight: 4
 --- !u!54 &3717199354508127635
 Rigidbody:
   m_ObjectHideFlags: 0

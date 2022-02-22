@@ -14,8 +14,8 @@ public class Jump : MonoBehaviour
     [SerializeField] private LayerMask layerMask;
 
     [SerializeField] private GroundPound groundPound;
-    private float apexHeight = 0.0f;
-    private float landHeight = 0.0f;
+    public float apexHeight = 0.0f;
+    public float landHeight = 0.0f;
 
     public bool isInAir = false;
     public bool newState = false;
@@ -25,8 +25,6 @@ public class Jump : MonoBehaviour
         newState = !GetIsTouchingGround();
         if (!newState && isInAir)
         {
-            Debug.Log("Actually landed");
-
             // Record landing height
             landHeight = transform.position.y;
 

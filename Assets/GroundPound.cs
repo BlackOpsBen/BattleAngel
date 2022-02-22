@@ -5,11 +5,13 @@ using UnityEngine;
 
 public class GroundPound : MonoBehaviour
 {
-    [SerializeField] private float minJumpHeight = 1.0f;
+    [SerializeField] private float minJumpHeight = 4.0f;
 
     public void CheckJump(float jumpApexHeight, float jumpLandHeight)
     {
-        if (jumpApexHeight - jumpLandHeight > minJumpHeight)
+        float jumpHeight = jumpApexHeight - jumpLandHeight;
+        Debug.Log("Jump height: " + jumpHeight);
+        if (jumpHeight > minJumpHeight)
         {
             PerformGroundPound();
         }
