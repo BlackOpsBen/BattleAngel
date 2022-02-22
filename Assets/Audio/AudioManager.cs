@@ -244,7 +244,6 @@ public class AudioManager : MonoBehaviour
         {
             if (charactersSpeaking[characterName].isPlaying)
             {
-                Debug.Log(characterName + " is speaking!");
                 return true;
             }
         }
