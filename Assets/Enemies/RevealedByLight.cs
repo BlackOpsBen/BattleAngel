@@ -10,6 +10,7 @@ public class RevealedByLight : MonoBehaviour
 
     private string tagTarget = "Target";
     private string tagDefault = "Enemy";
+    private int defaultLayer;
 
     private string propertyName = "_CutoffHeight";
 
@@ -28,6 +29,8 @@ public class RevealedByLight : MonoBehaviour
     {
         material = skinnedMeshRenderer.material;
         material.SetFloat(propertyName, minCutoffHeight);
+
+        defaultLayer = gameObject.layer;
 
         SetToggles(false);
     }
@@ -53,10 +56,12 @@ public class RevealedByLight : MonoBehaviour
         if (blend < 0.1f)
         {
             SetToggles(false);
+            gameObject.layer = 2;
         }
         else
         {
             SetToggles(true);
+            gameObject.layer = defaultLayer;
         }
     }
 
