@@ -2123,9 +2123,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35504ed795d0b5240aa77578839a731d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  turnSpeed: 5
   acceleration: 5
-  minAngleThreshold: 5
 --- !u!114 &10384129568630323
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2139,6 +2137,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shotsPerSecond: 12
+  damagePerShot: 10
   shakePreset: {fileID: 11400000, guid: dbe395895b7e38a40ae9202aad9b0f87, type: 2}
   muzzle: {fileID: 5986096585773049294}
   muzzlePFX: {fileID: 829325340896436898}
@@ -2173,6 +2172,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   livingObjects: []
   deadObjects: []
+  colliderToDisable: {fileID: 0}
   explosiveForce: 1
   explosiveRadius: 5
 --- !u!114 &275960791849404674

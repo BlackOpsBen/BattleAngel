@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class NavMeshMovement : MonoBehaviour
+public class NavMeshMovement : MonoBehaviour, IToggleWhenRevealed
 {
     private NavMeshAgent navMeshAgent;
 
     private Transform targetPlayer;
+
+    private bool isActive = true;
 
     private void Awake()
     {
@@ -17,11 +19,23 @@ public class NavMeshMovement : MonoBehaviour
 
     private void Update()
     {
-        navMeshAgent.destination = targetPlayer.position;
+        if (isActive)
+        {
+            navMeshAgent.destination = targetPlayer.position;
+        }
+        else
+        {
+            navMeshAgent.isStopped = true;
+        }
     }
 
     public Transform GetTargetPlayer()
     {
         return targetPlayer;
+    }
+
+    public void ToggleActive(bool active)
+    {
+        isActive = active;
     }
 }

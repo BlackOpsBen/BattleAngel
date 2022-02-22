@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MouthAttack : MonoBehaviour
+public class MouthAttack : MonoBehaviour, IToggleWhenRevealed
 {
     [SerializeField] private float attackDistance = 10.0f;
     [SerializeField] private float aimSpeed = 1.0f;
@@ -14,6 +14,8 @@ public class MouthAttack : MonoBehaviour
     private NavMeshMovement movement;
 
     private bool isAttacking = false;
+
+    private bool isActive = true;
 
     private void Awake()
     {
@@ -33,12 +35,12 @@ public class MouthAttack : MonoBehaviour
 
         isAttacking = distance < attackDistance;
 
-        animator.SetBool("isAttacking", isAttacking);
+        animator.SetBool("isAttacking", isAttacking && isActive);
     }
 
     private void FacePlayer()
     {
-        if (isAttacking)
+        if (isAttacking && isActive)
         {
             Quaternion lookRotation = Quaternion.LookRotation(movement.GetTargetPlayer().position - transform.position);
             Quaternion lerpedLook = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * aimSpeed);
@@ -49,5 +51,10 @@ public class MouthAttack : MonoBehaviour
     public void OnSpitEvent()
     {
         spitPFX.Play();
+    }
+
+    public void ToggleActive(bool active)
+    {
+        isActive = active;
     }
 }

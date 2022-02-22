@@ -53,7 +53,10 @@ public class DefaultDeathBehavior : MonoBehaviour, IDie
             navMeshAgent.isStopped = true;
         }
 
-        colliderToDisable.enabled = false;
+        if (colliderToDisable != null)
+        {
+            colliderToDisable.enabled = false;
+        }
 
         GameObject deadBodiesParent = new GameObject("[" + gameObject.name + "_DEAD]");
 

@@ -335,7 +335,6 @@ GameObject:
   - component: {fileID: 4885446231324844778}
   - component: {fileID: 3184861451369519675}
   - component: {fileID: 7757910906811572760}
-  - component: {fileID: 6034485012025217171}
   m_Layer: 6
   m_Name: EnemyMouth
   m_TagString: Enemy
@@ -489,20 +488,6 @@ MonoBehaviour:
   scriptsToDisable:
   - {fileID: 4885446231324844778}
   target: {fileID: 6136341151007857403}
---- !u!114 &6034485012025217171
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7192427934171372718}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a249082da5595b543aa65cdeb8a9d6ce, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  skinnedMeshRenderer: {fileID: 1202471515606630357}
-  blendSpeed: 2
 --- !u!54 &9011937250320656255
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -640,6 +625,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skinnedMeshRenderer: {fileID: 1202471515606630357}
+  toggleWhenRevealeds:
+  - {fileID: 6119653448697521115}
+  - {fileID: 4885446231324844778}
   blendSpeed: 2
 --- !u!114 &7075891414644527653
 MonoBehaviour:
