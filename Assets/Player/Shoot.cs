@@ -8,6 +8,7 @@ using UnityEngine.InputSystem;
 public class Shoot : MonoBehaviour
 {
     [SerializeField] private int shotsPerSecond = 10;
+    [SerializeField] private int damagePerShot = 10;
     [SerializeField] private ShakePreset shakePreset;
     [SerializeField] private Transform muzzle;
     [SerializeField] private PlayAllSubPFX muzzlePFX;
@@ -133,6 +134,27 @@ public class Shoot : MonoBehaviour
             hitFx.Play(hit.point, Quaternion.LookRotation(flatHitNormal, Vector3.up));
         }
 
+        DealDamage(hit);
+
         Instantiate(impactPFX, hit.point, Quaternion.LookRotation(hit.normal));
+    }
+
+    private void DealDamage(RaycastHit hit)
+    {
+        Health health;
+
+        if (health = hit.transform.GetComponent<Health>())
+        {
+            health.Damage(damagePerShot);
+            return;
+        }
+
+        TargetParentHealth targetParentHealth;
+
+        if (targetParentHealth = hit.transform.GetComponent<TargetParentHealth>())
+        {
+            health = targetParentHealth.GetParentHealth();
+            health.Damage(damagePerShot);
+        }
     }
 }

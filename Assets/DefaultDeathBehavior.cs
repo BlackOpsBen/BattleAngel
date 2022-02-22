@@ -7,6 +7,7 @@ public class DefaultDeathBehavior : MonoBehaviour, IDie
 {
     [SerializeField] private GameObject[] livingObjects;
     [SerializeField] private GameObject[] deadObjects;
+    [SerializeField] private Collider colliderToDisable;
     //[SerializeField] private MonoBehaviour[] scriptsToDisable;
 
     [SerializeField] private float explosiveForce = 1f;
@@ -22,8 +23,6 @@ public class DefaultDeathBehavior : MonoBehaviour, IDie
 
     public void Die()
     {
-        Debug.LogWarning("Player is dead!");
-
         foreach (GameObject livingObject in livingObjects)
         {
             livingObject.SetActive(false);
@@ -34,11 +33,6 @@ public class DefaultDeathBehavior : MonoBehaviour, IDie
             deadObject.SetActive(true);
         }
 
-        /*foreach (MonoBehaviour script in scriptsToDisable)
-        {
-            script.enabled = false;
-        }*/
-
         Animator animator;
         if (animator = GetComponent<Animator>())
         {
@@ -48,14 +42,18 @@ public class DefaultDeathBehavior : MonoBehaviour, IDie
         {
             animator.enabled = false;
         }
-        //GetComponent<Animator>().enabled = false;
+        else
+        {
+            Debug.LogWarning("No animator found in " + gameObject.name);
+        }
+
         NavMeshAgent navMeshAgent;
         if (navMeshAgent = GetComponent<NavMeshAgent>())
         {
             navMeshAgent.isStopped = true;
         }
-        //GetComponent<NavMeshAgent>().isStopped = true;
-        GetComponent<Collider>().enabled = false;
+
+        colliderToDisable.enabled = false;
 
         GameObject deadBodiesParent = new GameObject("[" + gameObject.name + "_DEAD]");
 
@@ -73,7 +71,7 @@ public class DefaultDeathBehavior : MonoBehaviour, IDie
 
             skinnedMeshRenderer.enabled = false;
 
-            deadObjects[i].transform.SetParent(deadBodiesParent.transform);
+            //deadObjects[i].transform.SetParent(deadBodiesParent.transform);
 
             Rigidbody rb = deadObjects[i].GetComponent<Rigidbody>();
             MeshCollider meshCollider = deadObjects[i].AddComponent<MeshCollider>();
