@@ -7,7 +7,7 @@ public class DefaultDeathBehavior : MonoBehaviour, IDie
 {
     [SerializeField] private GameObject[] livingObjects;
     [SerializeField] private GameObject[] deadObjects;
-    [SerializeField] private Collider colliderToDisable;
+    [SerializeField] private Collider[] collidersToDisable;
     //[SerializeField] private MonoBehaviour[] scriptsToDisable;
 
     [SerializeField] private float explosiveForce = 1f;
@@ -53,10 +53,14 @@ public class DefaultDeathBehavior : MonoBehaviour, IDie
             navMeshAgent.isStopped = true;
         }
 
-        if (colliderToDisable != null)
+        foreach (Collider mCollider in collidersToDisable)
         {
-            colliderToDisable.enabled = false;
+            mCollider.enabled = false;
         }
+        /*if (collidersToDisable != null)
+        {
+            collidersToDisable.enabled = false;
+        }*/
 
         GameObject deadBodiesParent = new GameObject("[" + gameObject.name + "_DEAD]");
 

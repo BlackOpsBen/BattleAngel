@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,16 +7,21 @@ public class GetsWounded : MonoBehaviour
 {
     [SerializeField] private List<LimbWoundHealth> limbWoundHealths = new List<LimbWoundHealth>();
 
+    private TagToggleManager tagToggle;
+
     private Animator animator;
 
     private void Awake()
     {
+        tagToggle = GetComponent<TagToggleManager>();
         animator = GetComponent<Animator>();
     }
 
     public void GetWounded()
     {
         animator.SetTrigger("Wounded");
+
+        tagToggle.SetIsWounded(true);
     }
 
     public void OnRecoveredEvent()
@@ -25,6 +31,8 @@ public class GetsWounded : MonoBehaviour
         {
             limb.ResetHP();
         }
+
+        tagToggle.SetIsWounded(false);
     }
 
     public void OnCryStartEvent()

@@ -9,11 +9,8 @@ public class RevealedByLight : MonoBehaviour
     [SerializeField] private List<MeshRenderer> meshRenderers = new List<MeshRenderer>();
     [SerializeField] private List<MonoBehaviour> toggleWhenRevealeds = new List<MonoBehaviour>();
     [SerializeField] private List<Collider> collidersToToggle = new List<Collider>();
-    [SerializeField] private List<Transform> transformsToTag = new List<Transform>();
+    [SerializeField] private List<Transform> transformsToReLayer = new List<Transform>();
     [SerializeField] private float toggleThreshold = 0.3f;
-
-    private string tagTarget = "Target";
-    private string tagDefault = "Enemy";
     private int defaultLayer;
 
     private string propertyName = "_CutoffHeight";
@@ -29,6 +26,13 @@ public class RevealedByLight : MonoBehaviour
     [SerializeField] private float blendSpeed = 2.0f;
 
     private int direction = -1;
+
+    private TagToggleManager tagToggle;
+
+    private void Awake()
+    {
+        tagToggle = GetComponent<TagToggleManager>();
+    }
 
     private void Start()
     {
@@ -99,7 +103,7 @@ public class RevealedByLight : MonoBehaviour
         if (blend < toggleThreshold)
         {
             SetToggles(false);
-            foreach (Transform mTransform in transformsToTag)
+            foreach (Transform mTransform in transformsToReLayer)
             {
                 mTransform.gameObject.layer = 2;
             }
@@ -107,7 +111,7 @@ public class RevealedByLight : MonoBehaviour
         else
         {
             SetToggles(true);
-            foreach (Transform mTransform in transformsToTag)
+            foreach (Transform mTransform in transformsToReLayer)
             {
                 mTransform.gameObject.layer = defaultLayer;
             }
@@ -128,7 +132,7 @@ public class RevealedByLight : MonoBehaviour
 
     private void SetToggles(bool active)
     {
-        SetTag(active);
+        tagToggle.SetIsLit(active);
 
         foreach (MonoBehaviour item in toggleWhenRevealeds)
         {
@@ -139,24 +143,6 @@ public class RevealedByLight : MonoBehaviour
         foreach (Collider mCollider in collidersToToggle)
         {
             mCollider.isTrigger = !active;
-        }
-    }
-
-    private void SetTag(bool active)
-    {
-        if (active)
-        {
-            foreach (Transform mTransform in transformsToTag)
-            {
-                mTransform.tag = tagTarget;
-            }
-        }
-        else
-        {
-            foreach (Transform mTransform in transformsToTag)
-            {
-                mTransform.tag = tagDefault;
-            }
         }
     }
 }
