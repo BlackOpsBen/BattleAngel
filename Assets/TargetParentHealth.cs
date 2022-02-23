@@ -4,10 +4,17 @@ using UnityEngine;
 
 public class TargetParentHealth : MonoBehaviour
 {
-    [SerializeField] private Health parentHealth;
+    [SerializeField] private MonoBehaviour parentHealth;
 
-    public Health GetParentHealth()
+    private IHealthType health;
+
+    private void Awake()
     {
-        return parentHealth;
+        health = (IHealthType)parentHealth;
+    }
+
+    public IHealthType GetParentHealth()
+    {
+        return health;
     }
 }

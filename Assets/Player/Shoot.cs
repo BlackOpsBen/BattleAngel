@@ -140,9 +140,10 @@ public class Shoot : MonoBehaviour
 
     private void DealDamage(RaycastHit hit)
     {
-        Health health;
+        IHealthType health;
+        health = hit.transform.GetComponent<IHealthType>();
 
-        if (health = hit.transform.GetComponent<Health>())
+        if (health != null)
         {
             health.Damage(damagePerShot);
             return;

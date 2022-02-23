@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Health : MonoBehaviour
+public class Health : MonoBehaviour, IHealthType
 {
     [SerializeField] private int maxHP = 100;
     private int currentHP;
