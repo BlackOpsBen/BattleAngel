@@ -9,7 +9,7 @@ public class EyeGuyDeathBehavior : DefaultDeathBehavior
 
     public override void Die()
     {
-        Instantiate(eyePrefab, eyeSpawnTransform.position, eyeSpawnTransform.rotation);
+        Instantiate(eyePrefab, eyeSpawnTransform.position, Quaternion.identity);
 
         base.Die();
     }

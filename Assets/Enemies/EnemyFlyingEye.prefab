@@ -194,6 +194,8 @@ MonoBehaviour:
   frequency: 1
   seed: 1
   amplitude: 10
+  ySnapStrength: 0.5
+  ySnapHeight: 3.5
 --- !u!54 &1600118777250580114
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -492,7 +492,7 @@ public class SourcePool
         {
             GameObject newGameObject = new GameObject("Sound3D", typeof(RemoveSourceOnDestroy));
             newSource = newGameObject.AddComponent<AudioSource>();
-            newSource.spatialBlend = 1.0f;
+            newSource.spatialBlend = 0.75f;
         }
         sources.Add(newSource);
         return newSource;

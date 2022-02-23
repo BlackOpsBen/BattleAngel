@@ -7,6 +7,8 @@ public class PerlinMovement : MonoBehaviour
     [SerializeField] private float frequency = 1.0f;
     [SerializeField] private float seed = 1.0f;
     [SerializeField] private float amplitude = 1.0f;
+    [SerializeField] private float ySnapStrength = 1.0f;
+    [SerializeField] private float ySnapHeight = 3.5f;
     private void Update()
     {
         float perlinX = Mathf.PerlinNoise(seed, Time.time * frequency);
@@ -17,8 +19,12 @@ public class PerlinMovement : MonoBehaviour
         float perlinYPlusMinus = (perlinY * 2) - 1;
         float perlinZPlusMinus = (perlinZ * 2) - 1;
 
-        Vector3 movement = new Vector3(perlinXPlusMinus, perlinYPlusMinus, perlinZPlusMinus);
+        float lerpYPos = Mathf.Lerp(transform.position.y, ySnapHeight, Time.deltaTime * ySnapStrength);
 
-        transform.position += movement * Time.deltaTime * amplitude;
+        Vector3 perlinOffset = new Vector3(perlinXPlusMinus, perlinYPlusMinus, perlinZPlusMinus);
+        Vector3 ySnappedPos = new Vector3(transform.position.x, lerpYPos, transform.position.z);
+        Vector3 newPos = ySnappedPos + (perlinOffset * Time.deltaTime * amplitude);
+
+        transform.position = newPos;
     }
 }
