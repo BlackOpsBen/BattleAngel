@@ -35,7 +35,6 @@ public class LimbWoundHealth : MonoBehaviour, IHealthType
 
     private void Wounded()
     {
-        Debug.LogWarning("Wounded!");
         isWounded = true;
         getsWounded.GetWounded();
     }

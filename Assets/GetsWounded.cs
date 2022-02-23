@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(TagToggleManager))]
 public class GetsWounded : MonoBehaviour
 {
     [SerializeField] private List<LimbWoundHealth> limbWoundHealths = new List<LimbWoundHealth>();
@@ -27,7 +28,6 @@ public class GetsWounded : MonoBehaviour
 
     public void OnRecoveredEvent()
     {
-        Debug.LogWarning("Recovered!");
         foreach (LimbWoundHealth limb in limbWoundHealths)
         {
             limb.ResetHP();
