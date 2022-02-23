@@ -9,7 +9,6 @@ public class RevealEnemies : MonoBehaviour
         RevealByLightDelegate reveal;
         if (reveal = other.gameObject.GetComponent<RevealByLightDelegate>())
         {
-            Debug.Log("Revealing " + other.name);
             reveal.Reveal();
         }
     }

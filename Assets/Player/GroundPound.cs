@@ -10,7 +10,6 @@ public class GroundPound : MonoBehaviour
     public void CheckJump(float jumpApexHeight, float jumpLandHeight)
     {
         float jumpHeight = jumpApexHeight - jumpLandHeight;
-        Debug.Log("Jump height: " + jumpHeight);
         if (jumpHeight > minJumpHeight)
         {
             PerformGroundPound();
@@ -19,6 +18,6 @@ public class GroundPound : MonoBehaviour
 
     private void PerformGroundPound()
     {
-        Debug.Log("Ground Pound!");
+        
     }
 }

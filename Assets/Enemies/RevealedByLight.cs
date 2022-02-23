@@ -68,9 +68,15 @@ public class RevealedByLight : MonoBehaviour
         }
     }*/
 
+    private void FixedUpdate()
+    {
+        UpdateBlendFixed();
+        direction = -1;
+    }
+
     private void Update()
     {
-        UpdateBlend();
+        //UpdateBlend();
         UpdateMaterials();
         ToggleItems();
     }
@@ -105,6 +111,12 @@ public class RevealedByLight : MonoBehaviour
     private void UpdateBlend()
     {
         blend += Time.deltaTime * direction * blendSpeed;
+        blend = Mathf.Clamp01(blend);
+    }
+
+    private void UpdateBlendFixed()
+    {
+        blend += Time.fixedDeltaTime * direction * blendSpeed;
         blend = Mathf.Clamp01(blend);
     }
 
