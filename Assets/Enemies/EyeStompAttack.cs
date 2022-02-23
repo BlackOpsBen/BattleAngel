@@ -71,7 +71,7 @@ public class EyeStompAttack : MonoBehaviour, IToggleWhenRevealed
     {
         Vector3 playerPos = movement.GetTargetPlayer().position;
         float distance = Vector3.Distance(fromPosition, playerPos);
-        return distance < attackDistance;
+        return distance < damageRadius;
     }
 
     public void ToggleActive(bool active)
