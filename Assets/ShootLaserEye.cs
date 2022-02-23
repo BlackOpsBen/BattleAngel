@@ -5,12 +5,18 @@ using UnityEngine;
 public class ShootLaserEye : MonoBehaviour, IToggleWhenRevealed
 {
     [SerializeField] private float fireDuration = 5.0f;
-    [SerializeField] private float restDuration = 7.0f;
+    [SerializeField] private float restDuration = 5.0f;
     [SerializeField] private ParticleSystem laserPFX;
-    private float timer = float.MaxValue;
+    [SerializeField] private float initialRestPercent = 0.5f;
+    private float timer;
 
     private bool isFiring = false;
-    private bool isActive = false;
+    private bool isActive = true;
+
+    private void Start()
+    {
+        timer = restDuration * initialRestPercent;
+    }
 
     public void ToggleActive(bool active)
     {
