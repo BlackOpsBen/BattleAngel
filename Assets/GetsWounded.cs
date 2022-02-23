@@ -6,6 +6,7 @@ using UnityEngine;
 public class GetsWounded : MonoBehaviour
 {
     [SerializeField] private List<LimbWoundHealth> limbWoundHealths = new List<LimbWoundHealth>();
+    [SerializeField] private ParticleSystem cryPFX;
 
     private TagToggleManager tagToggle;
 
@@ -37,11 +38,11 @@ public class GetsWounded : MonoBehaviour
 
     public void OnCryStartEvent()
     {
-
+        cryPFX.Play();
     }
 
     public void OnCryEndEvent()
     {
-
+        cryPFX.Stop();
     }
 }
