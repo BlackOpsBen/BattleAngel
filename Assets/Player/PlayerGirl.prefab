@@ -903,7 +903,7 @@ MonoBehaviour:
   - {fileID: 7602973668418749973}
   - {fileID: 3978575987483870293}
   - {fileID: 7449565378208726727}
-  colliderToDisable: {fileID: 8325303763286663565}
+  collidersToDisable: []
   explosiveForce: 20
   explosiveRadius: 5
   scriptsToDisable:

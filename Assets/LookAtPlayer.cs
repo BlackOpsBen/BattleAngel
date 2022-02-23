@@ -5,6 +5,7 @@ using UnityEngine;
 public class LookAtPlayer : MonoBehaviour
 {
     private Transform player;
+    [SerializeField] private float verticalOffset = 1.0f;
 
     private void Awake()
     {
@@ -13,6 +14,7 @@ public class LookAtPlayer : MonoBehaviour
 
     private void Update()
     {
-        transform.LookAt(player);
+        Vector3 position = player.position + (Vector3.up * verticalOffset);
+        transform.LookAt(position);
     }
 }
