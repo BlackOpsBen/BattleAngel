@@ -7,7 +7,7 @@ public class NavMeshMovement : MonoBehaviour, IToggleWhenRevealed
 {
     private NavMeshAgent navMeshAgent;
 
-    public Transform targetPlayer;
+    private Transform targetPlayer;
 
     private bool isActive = true;
 

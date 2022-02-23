@@ -11,6 +11,8 @@ public class Health : MonoBehaviour
     private IDie deathBehavior;
     private IHurt hurtBehavior;
 
+    private bool isDead = false;
+
     private void Start()
     {
         currentHP = maxHP;
@@ -20,7 +22,7 @@ public class Health : MonoBehaviour
 
     public void Damage(int damage)
     {
-        if (!invincible)
+        if (!invincible && !isDead)
         {
             currentHP -= damage;
 
@@ -38,6 +40,7 @@ public class Health : MonoBehaviour
 
     private void Die()
     {
+        isDead = true;
         deathBehavior.Die();
     }
 

@@ -4820,7 +4820,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b2c0952af49f604fa991cef85f22a51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interval: 0.1
+  interval: 0.2
 --- !u!1001 &6362942751530615831
 PrefabInstance:
   m_ObjectHideFlags: 0

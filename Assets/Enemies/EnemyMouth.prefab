@@ -411,7 +411,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e100758306329e54181caccbe303ed5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetPlayer: {fileID: 0}
 --- !u!114 &4885446231324844778
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -627,11 +626,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a249082da5595b543aa65cdeb8a9d6ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skinnedMeshRenderer: {fileID: 1202471515606630357}
+  skinnedMeshRenderers:
+  - {fileID: 1202471515606630357}
+  meshRenderers: []
   toggleWhenRevealeds:
   - {fileID: 4885446231324844778}
   colliderToToggle: {fileID: 4884429070189388844}
   toggleThreshold: 0.3
+  minCutoffHeight: -0.45
+  maxCutoffHeight: 5
   blendSpeed: 2
 --- !u!114 &7075891414644527653
 MonoBehaviour:

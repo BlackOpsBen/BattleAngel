@@ -16,6 +16,7 @@ public class Shoot : MonoBehaviour
     [SerializeField] private GameObject impactPFX;
     [SerializeField] private float maxRange = 100.0f;
     [SerializeField] private Vector3 spread = new Vector3(1f, 1f, 1f);
+    [SerializeField] private LayerMask layerMask;
 
     private float shotTimer = float.MaxValue;
 
@@ -74,7 +75,7 @@ public class Shoot : MonoBehaviour
         Vector3 direction = GetShotDirection();
         Vector3 destination = muzzle.position + direction * maxRange;
 
-        if (Physics.Raycast(muzzle.position, direction, out hit, maxRange))
+        if (Physics.Raycast(muzzle.position, direction, out hit, maxRange, layerMask))
         {
             destination = hit.point;
             ProcessHit(hit);

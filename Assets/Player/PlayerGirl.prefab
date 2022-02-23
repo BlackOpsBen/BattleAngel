@@ -486,7 +486,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7120204734846408890}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.481}
+  m_LocalPosition: {x: 0, y: 0, z: 0.54}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4014034365029425374}
@@ -825,6 +825,9 @@ MonoBehaviour:
   impactPFX: {fileID: 3030169429997309139, guid: eaa94e0772f268145a9e2d2a25c60c07, type: 3}
   maxRange: 100
   spread: {x: 0.1, y: 0.1, z: 0.1}
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 81
 --- !u!114 &8325303763286663559
 MonoBehaviour:
   m_ObjectHideFlags: 0

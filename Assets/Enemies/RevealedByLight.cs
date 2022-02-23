@@ -5,7 +5,8 @@ using UnityEngine;
 
 public class RevealedByLight : MonoBehaviour
 {
-    [SerializeField] private SkinnedMeshRenderer skinnedMeshRenderer;
+    [SerializeField] private List<SkinnedMeshRenderer> skinnedMeshRenderers = new List<SkinnedMeshRenderer>();
+    [SerializeField] private List<MeshRenderer> meshRenderers = new List<MeshRenderer>();
     [SerializeField] private List<MonoBehaviour> toggleWhenRevealeds = new List<MonoBehaviour>();
     [SerializeField] private Collider colliderToToggle;
     [SerializeField] private float toggleThreshold = 0.3f;
@@ -16,10 +17,11 @@ public class RevealedByLight : MonoBehaviour
 
     private string propertyName = "_CutoffHeight";
 
-    private Material material;
+    private List<Material> skinMeshMaterials = new List<Material>();
+    private List<Material> meshMaterials = new List<Material>();
 
-    private float minCutoffHeight = -0.45f;
-    private float maxCutoffHeight = 5.0f;
+    [SerializeField] private float minCutoffHeight = -0.45f;
+    [SerializeField] private float maxCutoffHeight = 5.0f;
 
     private float blend = 0.0f;
 
@@ -29,8 +31,19 @@ public class RevealedByLight : MonoBehaviour
 
     private void Start()
     {
-        material = skinnedMeshRenderer.material;
-        material.SetFloat(propertyName, minCutoffHeight);
+        for (int i = 0; i < skinnedMeshRenderers.Count; i++)
+        {
+            Material mat = skinnedMeshRenderers[i].material;
+            mat.SetFloat(propertyName, minCutoffHeight);
+            skinMeshMaterials.Add(mat);
+        }
+
+        for (int i = 0; i < meshRenderers.Count; i++)
+        {
+            Material mat = meshRenderers[i].material;
+            mat.SetFloat(propertyName, minCutoffHeight);
+            meshMaterials.Add(mat);
+        }
 
         defaultLayer = gameObject.layer;
 
@@ -53,7 +66,15 @@ public class RevealedByLight : MonoBehaviour
     {
         UpdateBlend();
 
-        material.SetFloat(propertyName, Mathf.Lerp(minCutoffHeight, maxCutoffHeight, blend));
+        for (int i = 0; i < skinMeshMaterials.Count; i++)
+        {
+            skinMeshMaterials[i].SetFloat(propertyName, Mathf.Lerp(minCutoffHeight, maxCutoffHeight, blend));
+        }
+
+        for (int i = 0; i < meshMaterials.Count; i++)
+        {
+            meshMaterials[i].SetFloat(propertyName, Mathf.Lerp(minCutoffHeight, maxCutoffHeight, blend));
+        }
 
         if (blend < toggleThreshold)
         {
