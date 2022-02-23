@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using MilkShake;
+using UnityEngine.AI;
 
 public class EyeStompAttack : MonoBehaviour, IToggleWhenRevealed
 {
@@ -12,6 +13,10 @@ public class EyeStompAttack : MonoBehaviour, IToggleWhenRevealed
     [SerializeField] private float damageRadius = 5.0f;
     [SerializeField] private int damageAmount = 10;
     [SerializeField] private ShakePreset shakePreset;
+
+    private NavMeshAgent navAgent;
+    private float moveSpeed;
+    private float angularSpeed;
 
     private Animator animator;
 
@@ -23,6 +28,9 @@ public class EyeStompAttack : MonoBehaviour, IToggleWhenRevealed
 
     private void Awake()
     {
+        navAgent = GetComponent<NavMeshAgent>();
+        moveSpeed = navAgent.speed;
+        angularSpeed = navAgent.angularSpeed;
         animator = GetComponent<Animator>();
         movement = GetComponent<NavMeshMovement>();
     }
@@ -30,6 +38,7 @@ public class EyeStompAttack : MonoBehaviour, IToggleWhenRevealed
     private void Update()
     {
         SetIsAttacking(); // TODO refactor so Enemy Attacks share same script
+        SetMoveSpeed();
     }
 
     private void SetIsAttacking()
@@ -39,6 +48,21 @@ public class EyeStompAttack : MonoBehaviour, IToggleWhenRevealed
         isAttacking = distance < attackDistance;
 
         animator.SetBool("isAttacking", isAttacking && isActive);
+    }
+
+    private void SetMoveSpeed()
+    {
+        if (isAttacking)
+        {
+            navAgent.speed = 0.0f;
+            navAgent.angularSpeed = 0.0f;
+        }
+
+        if (animator.GetCurrentAnimatorStateInfo(0).IsName("Move"))
+        {
+            navAgent.speed = moveSpeed;
+            navAgent.angularSpeed = angularSpeed;
+        }
     }
 
     public void OnStompLeftEvent()
