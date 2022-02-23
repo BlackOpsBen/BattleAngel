@@ -335,6 +335,7 @@ GameObject:
   - component: {fileID: 4885446231324844778}
   - component: {fileID: 3184861451369519675}
   - component: {fileID: 7757910906811572760}
+  - component: {fileID: 3375848611854672973}
   m_Layer: 6
   m_Name: EnemyMouth
   m_TagString: Enemy
@@ -489,6 +490,31 @@ MonoBehaviour:
   - {fileID: 4885446231324844778}
   - {fileID: 6119653448697521115}
   target: {fileID: 6136341151007857403}
+--- !u!114 &3375848611854672973
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7192427934171372718}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a249082da5595b543aa65cdeb8a9d6ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skinnedMeshRenderers:
+  - {fileID: 1202471515606630357}
+  meshRenderers: []
+  toggleWhenRevealeds:
+  - {fileID: 4885446231324844778}
+  collidersToToggle:
+  - {fileID: 4884429070189388844}
+  transformsToTag:
+  - {fileID: 6136341151007857403}
+  toggleThreshold: 0.3
+  minCutoffHeight: -0.45
+  maxCutoffHeight: 5
+  blendSpeed: 2
 --- !u!54 &9011937250320656255
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -614,7 +640,7 @@ MonoBehaviour:
   hitPfx:
   - {fileID: 8975984756514930159}
   hitSoundName: SC_BloodHit
---- !u!114 &3616130051953644405
+--- !u!114 &6466066288053039347
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -623,19 +649,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 8128856385403229454}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a249082da5595b543aa65cdeb8a9d6ce, type: 3}
+  m_Script: {fileID: 11500000, guid: 055100aa031ee084c9faa3c3904f7a31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skinnedMeshRenderers:
-  - {fileID: 1202471515606630357}
-  meshRenderers: []
-  toggleWhenRevealeds:
-  - {fileID: 4885446231324844778}
-  colliderToToggle: {fileID: 4884429070189388844}
-  toggleThreshold: 0.3
-  minCutoffHeight: -0.45
-  maxCutoffHeight: 5
-  blendSpeed: 2
+  revealedByLight: {fileID: 3375848611854672973}
 --- !u!114 &7075891414644527653
 MonoBehaviour:
   m_ObjectHideFlags: 0

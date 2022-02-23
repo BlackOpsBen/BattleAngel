@@ -8,7 +8,8 @@ public class RevealedByLight : MonoBehaviour
     [SerializeField] private List<SkinnedMeshRenderer> skinnedMeshRenderers = new List<SkinnedMeshRenderer>();
     [SerializeField] private List<MeshRenderer> meshRenderers = new List<MeshRenderer>();
     [SerializeField] private List<MonoBehaviour> toggleWhenRevealeds = new List<MonoBehaviour>();
-    [SerializeField] private Collider colliderToToggle;
+    [SerializeField] private List<Collider> collidersToToggle = new List<Collider>();
+    [SerializeField] private List<Transform> transformsToTag = new List<Transform>();
     [SerializeField] private float toggleThreshold = 0.3f;
 
     private string tagTarget = "Target";
@@ -50,7 +51,12 @@ public class RevealedByLight : MonoBehaviour
         SetToggles(false);
     }
 
-    public void SetVisibility(bool visible)
+    public void Reveal()
+    {
+        direction = 1;
+    }
+
+    /*public void SetVisibility(bool visible)
     {
         if (visible)
         {
@@ -60,12 +66,17 @@ public class RevealedByLight : MonoBehaviour
         {
             direction = -1;
         }
-    }
+    }*/
 
     private void Update()
     {
         UpdateBlend();
+        UpdateMaterials();
+        ToggleItems();
+    }
 
+    private void UpdateMaterials()
+    {
         for (int i = 0; i < skinMeshMaterials.Count; i++)
         {
             skinMeshMaterials[i].SetFloat(propertyName, Mathf.Lerp(minCutoffHeight, maxCutoffHeight, blend));
@@ -75,7 +86,10 @@ public class RevealedByLight : MonoBehaviour
         {
             meshMaterials[i].SetFloat(propertyName, Mathf.Lerp(minCutoffHeight, maxCutoffHeight, blend));
         }
+    }
 
+    private void ToggleItems()
+    {
         if (blend < toggleThreshold)
         {
             SetToggles(false);
@@ -104,18 +118,27 @@ public class RevealedByLight : MonoBehaviour
             toggleable.ToggleActive(active);
         }
 
-        colliderToToggle.isTrigger = !active;
+        foreach (Collider mCollider in collidersToToggle)
+        {
+            mCollider.isTrigger = !active;
+        }
     }
 
     private void SetTag(bool active)
     {
         if (active)
         {
-            gameObject.tag = tagTarget;
+            foreach (Transform mTransform in transformsToTag)
+            {
+                mTransform.tag = tagTarget;
+            }
         }
         else
         {
-            gameObject.tag = tagDefault;
+            foreach (Transform mTransform in transformsToTag)
+            {
+                mTransform.tag = tagDefault;
+            }
         }
     }
 }
