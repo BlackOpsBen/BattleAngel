@@ -261,11 +261,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 871165405a7672547a9948c477693942, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackDistance: 10
+  attackDistance: 5
   leftStomp: {fileID: 6774047827366475702}
   rightStomp: {fileID: 6847200154184108216}
-  damageRadius: 5
-  damageAmount: 10
+  damageRadius: 6
+  damageAmount: 8
   shakePreset: {fileID: 11400000, guid: 483350fd3b4f18141a6b34ad420a080b, type: 2}
 --- !u!114 &492619139814661879
 MonoBehaviour:
@@ -2142,9 +2142,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 137147872581705231}
     m_Modifications:
+    - target: {fileID: 901923182602138396, guid: 82be0ab501d3aae46aed36bed50ec2ff, type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1548895647538678180, guid: 82be0ab501d3aae46aed36bed50ec2ff, type: 3}
       propertyPath: m_Name
       value: YellowBloodHitPFX
+      objectReference: {fileID: 0}
+    - target: {fileID: 1548895647538678182, guid: 82be0ab501d3aae46aed36bed50ec2ff, type: 3}
+      propertyPath: playOnAwake
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1548895647538678183, guid: 82be0ab501d3aae46aed36bed50ec2ff, type: 3}
       propertyPath: m_RootOrder

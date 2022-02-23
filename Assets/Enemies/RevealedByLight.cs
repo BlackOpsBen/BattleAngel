@@ -99,12 +99,18 @@ public class RevealedByLight : MonoBehaviour
         if (blend < toggleThreshold)
         {
             SetToggles(false);
-            gameObject.layer = 2;
+            foreach (Transform mTransform in transformsToTag)
+            {
+                mTransform.gameObject.layer = 2;
+            }
         }
         else
         {
             SetToggles(true);
-            gameObject.layer = defaultLayer;
+            foreach (Transform mTransform in transformsToTag)
+            {
+                mTransform.gameObject.layer = defaultLayer;
+            }
         }
     }
 
