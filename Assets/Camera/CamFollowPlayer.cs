@@ -13,7 +13,7 @@ public class CamFollowPlayer : MonoBehaviour
         target = FindObjectOfType<Movement>().transform;
     }
 
-    private void Update()
+    private void LateUpdate()
     {
         if (target != null)
         {
