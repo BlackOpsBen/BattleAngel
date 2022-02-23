@@ -4,15 +4,11 @@ using UnityEngine;
 
 public class PlayMusic : MonoBehaviour
 {
+    [SerializeField] private string songName;
+
     // Start is called before the first frame update
     void Start()
     {
-        AudioManager.Instance.PlaySoundLoop("Insurrection", "Music", "Music");
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        AudioManager.Instance.PlaySoundLoop(songName, "Music", "Music");
     }
 }
