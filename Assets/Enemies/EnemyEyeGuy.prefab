@@ -249,12 +249,13 @@ MonoBehaviour:
   - {fileID: 137147872275581666}
   - {fileID: 5709750730198903843}
   - {fileID: 1687081843638692804}
+  scriptsToDisable:
+  - {fileID: 137147872581705226}
+  - {fileID: 2466785891951772986}
   explosiveForce: 20
   explosiveRadius: 10
   eyePrefab: {fileID: 5326558007619536720, guid: f3ac08e08d599e842bfb8a7a6714b49f, type: 3}
   eyeSpawnTransform: {fileID: 3205531930980225432}
-  scriptsToDisable:
-  - {fileID: 137147872581705226}
 --- !u!114 &2466785891951772986
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1100,6 +1101,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7bde561efa3c7db4e9522b06a24090e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  verticalOffset: 1
 --- !u!54 &2913373815783966573
 Rigidbody:
   m_ObjectHideFlags: 0

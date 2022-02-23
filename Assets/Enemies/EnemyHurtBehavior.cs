@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class EnemyHurtBehavior : MonoBehaviour, IHurt
 {
+    [SerializeField] private string hurtSound;
     public void Hurt()
     {
-        Debug.Log(gameObject.name + " was hurt!");
+        AudioManager.Instance.PlaySound(hurtSound, transform);
     }
 }

@@ -4,16 +4,10 @@ using UnityEngine;
 
 public class EnemyMouthDeathBehavior : DefaultDeathBehavior
 {
-    [SerializeField] private List<MonoBehaviour> scriptsToDisable = new List<MonoBehaviour>();
     [SerializeField] private Transform target;
 
     public override void Die()
     {
-        foreach (MonoBehaviour script in scriptsToDisable)
-        {
-            script.enabled = false;
-        }
-
         target.tag = "Enemy";
 
         base.Die();

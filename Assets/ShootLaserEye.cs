@@ -68,4 +68,9 @@ public class ShootLaserEye : MonoBehaviour, IToggleWhenRevealed
 
         Debug.Log("Eye firing = " + isFiring);
     }
+
+    private void OnDisable()
+    {
+        SetFiring(false);
+    }
 }

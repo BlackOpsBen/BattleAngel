@@ -8,7 +8,7 @@ public class DefaultDeathBehavior : MonoBehaviour, IDie
     [SerializeField] private GameObject[] livingObjects;
     [SerializeField] private GameObject[] deadObjects;
     [SerializeField] private Collider[] collidersToDisable;
-    //[SerializeField] private MonoBehaviour[] scriptsToDisable;
+    [SerializeField] private MonoBehaviour[] scriptsToDisable;
 
     [SerializeField] private float explosiveForce = 1f;
     [SerializeField] private float explosiveRadius = 5f;
@@ -56,6 +56,11 @@ public class DefaultDeathBehavior : MonoBehaviour, IDie
         foreach (Collider mCollider in collidersToDisable)
         {
             mCollider.enabled = false;
+        }
+
+        foreach (MonoBehaviour script in scriptsToDisable)
+        {
+            script.enabled = false;
         }
         /*if (collidersToDisable != null)
         {
