@@ -6,7 +6,6 @@ public class ObjectiveDeathBehavior : MonoBehaviour, IDie
 {
     [SerializeField] private SequenceExplosion[] sequenceExplosions;
     [SerializeField] private string fireSoundName;
-    [SerializeField] private string uniqueLoopID;
     [SerializeField] private AudioSource soundToStop;
     [SerializeField] private Transform targetToReTag;
 
@@ -23,6 +22,10 @@ public class ObjectiveDeathBehavior : MonoBehaviour, IDie
 
     public void Die()
     {
+        GetComponent<SpawnArea>().SetIsSpawning(false);
+
+        SpawnManager.Instance.OnObjectiveDestroyed();
+
         StartCoroutine(PlaySequence());
     }
 
@@ -44,7 +47,7 @@ public class ObjectiveDeathBehavior : MonoBehaviour, IDie
 
             if (explosion.playFireSoundLoop)
             {
-                AudioManager.Instance.PlaySoundLoop(fireSoundName, transform, uniqueLoopID);
+                AudioManager.Instance.PlaySoundLoop(fireSoundName, transform, gameObject.name);
             }
         }
     }

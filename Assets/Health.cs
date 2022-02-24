@@ -48,4 +48,9 @@ public class Health : MonoBehaviour, IHealthType
     {
         invincible = value;
     }
+
+    public bool GetIsDead()
+    {
+        return isDead;
+    }
 }
