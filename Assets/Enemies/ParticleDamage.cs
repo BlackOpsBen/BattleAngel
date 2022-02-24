@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpitDamage : MonoBehaviour
+public class ParticleDamage : MonoBehaviour
 {
     [SerializeField] private int damageAmount = 1;
 
