@@ -8,7 +8,7 @@ public class LimbWoundHealth : MonoBehaviour, IHealthType
     [SerializeField] private GetsWounded getsWounded;
 
     [SerializeField] private int HP = 100;
-    public int currentHP;
+    private int currentHP;
 
     private bool isWounded = false;
 

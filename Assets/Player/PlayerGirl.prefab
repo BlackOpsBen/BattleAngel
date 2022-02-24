@@ -817,7 +817,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shotsPerSecond: 12
-  damagePerShot: 10
+  damagePerShot: 1
   shakePreset: {fileID: 11400000, guid: dbe395895b7e38a40ae9202aad9b0f87, type: 2}
   muzzle: {fileID: 1930556555605246137}
   muzzlePFX: {fileID: 4505154929156909608}

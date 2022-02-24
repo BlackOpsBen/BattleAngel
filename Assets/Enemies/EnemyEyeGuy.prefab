@@ -197,7 +197,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b9591aa18804a24ca8f700964df598c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHP: 500
+  maxHP: 75
 --- !u!114 &8917980586406483267
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -559,8 +559,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   getsWounded: {fileID: 6632919432529895456}
-  HP: 100
-  currentHP: 0
+  HP: 20
 --- !u!114 &4254526964492265153
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -950,8 +949,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   getsWounded: {fileID: 6632919432529895456}
-  HP: 100
-  currentHP: 0
+  HP: 20
 --- !u!114 &3413177240662533266
 MonoBehaviour:
   m_ObjectHideFlags: 0
