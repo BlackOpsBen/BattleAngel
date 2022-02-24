@@ -11,6 +11,9 @@ public class PerlinMovement : MonoBehaviour
     [SerializeField] private float ySnapHeight = 3.5f;
     private void Update()
     {
+        Debug.Log("Actual Y: " + transform.position.y);
+        Debug.Log("Distance to desired Y: " + (transform.position.y - ySnapHeight));
+
         float perlinX = Mathf.PerlinNoise(seed, Time.time * frequency);
         float perlinY = Mathf.PerlinNoise(seed + 1, Time.time * frequency);
         float perlinZ = Mathf.PerlinNoise(seed + 2, Time.time * frequency);
