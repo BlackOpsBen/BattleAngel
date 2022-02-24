@@ -486,11 +486,11 @@ MonoBehaviour:
   - {fileID: 5554127841144125032}
   collidersToDisable:
   - {fileID: 4884429070189388844}
-  explosiveForce: 50
-  explosiveRadius: 5
   scriptsToDisable:
   - {fileID: 4885446231324844778}
   - {fileID: 6119653448697521115}
+  explosiveForce: 50
+  explosiveRadius: 5
   target: {fileID: 6136341151007857403}
 --- !u!114 &3375848611854672973
 MonoBehaviour:
@@ -511,7 +511,8 @@ MonoBehaviour:
   - {fileID: 4885446231324844778}
   collidersToToggle:
   - {fileID: 4884429070189388844}
-  transformsToReLayer: []
+  transformsToReLayer:
+  - {fileID: 6136341151007857403}
   toggleThreshold: 0.3
   minCutoffHeight: -0.45
   maxCutoffHeight: 5
