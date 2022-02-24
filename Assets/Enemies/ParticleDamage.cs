@@ -8,6 +8,7 @@ public class ParticleDamage : MonoBehaviour
 
     private void OnParticleCollision(GameObject other)
     {
+        Debug.Log("particle hit " + other.name);
         Health health;
         if (health = other.GetComponent<Health>())
         {

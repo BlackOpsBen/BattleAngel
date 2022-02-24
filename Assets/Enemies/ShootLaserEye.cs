@@ -8,6 +8,7 @@ public class ShootLaserEye : MonoBehaviour, IToggleWhenRevealed
     [SerializeField] private float restDuration = 5.0f;
     [SerializeField] private ParticleSystem laserPFX;
     [SerializeField] private float initialRestPercent = 0.5f;
+    [SerializeField] private AudioSource firingSound;
     private float timer;
 
     private bool isFiring = false;
@@ -60,10 +61,12 @@ public class ShootLaserEye : MonoBehaviour, IToggleWhenRevealed
         if (value)
         {
             laserPFX.Play();
+            firingSound.Play();
         }
         else
         {
             laserPFX.Stop();
+            firingSound.Stop();
         }
 
         Debug.Log("Eye firing = " + isFiring);

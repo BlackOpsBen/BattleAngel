@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3103240754038111612}
   - component: {fileID: 3103240754038111614}
   - component: {fileID: 3103240754038111615}
+  - component: {fileID: 6068839868360316304}
   m_Layer: 0
   m_Name: Laser
   m_TagString: Untagged
@@ -4805,6 +4806,19 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
+--- !u!114 &6068839868360316304
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3103240754038111613}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bfe7a12d8152ba84a8b5c8d3c113b5e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageAmount: 1
 --- !u!1 &3103240754532540222
 GameObject:
   m_ObjectHideFlags: 0
