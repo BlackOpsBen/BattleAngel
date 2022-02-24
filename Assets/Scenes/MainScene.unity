@@ -768,6 +768,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 137147872581705229, guid: 1ae778a74caca0c4d88167ecf8120133, type: 3}
+      propertyPath: maxHP
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 137147872581705230, guid: 1ae778a74caca0c4d88167ecf8120133, type: 3}
       propertyPath: m_Name
       value: EnemyEyeGuy
@@ -778,7 +782,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 137147872581705231, guid: 1ae778a74caca0c4d88167ecf8120133, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4.5486526
+      value: 0.59
       objectReference: {fileID: 0}
     - target: {fileID: 137147872581705231, guid: 1ae778a74caca0c4d88167ecf8120133, type: 3}
       propertyPath: m_LocalPosition.y
@@ -786,7 +790,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 137147872581705231, guid: 1ae778a74caca0c4d88167ecf8120133, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 20.665459
+      value: 4.72
       objectReference: {fileID: 0}
     - target: {fileID: 137147872581705231, guid: 1ae778a74caca0c4d88167ecf8120133, type: 3}
       propertyPath: m_LocalRotation.w

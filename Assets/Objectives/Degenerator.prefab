@@ -6594,6 +6594,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4548221116725364720}
     m_Modifications:
+    - target: {fileID: 89280188517090827, guid: 1a5a06254280611498cd4b9e6f482934, type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 89280188517090827, guid: 1a5a06254280611498cd4b9e6f482934, type: 3}
+      propertyPath: InitialModule.startSpeed.scalar
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 89280188517090827, guid: 1a5a06254280611498cd4b9e6f482934, type: 3}
+      propertyPath: InitialModule.startSize.minScalar
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 89280188517090827, guid: 1a5a06254280611498cd4b9e6f482934, type: 3}
+      propertyPath: InitialModule.startSpeed.minScalar
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 3338635566817255911, guid: 1a5a06254280611498cd4b9e6f482934, type: 3}
       propertyPath: m_Name
       value: SmallExplosion 1
@@ -6642,6 +6658,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5649663707893994262, guid: 1a5a06254280611498cd4b9e6f482934, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.17
+      objectReference: {fileID: 0}
+    - target: {fileID: 5714908791757646638, guid: 1a5a06254280611498cd4b9e6f482934, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.b
+      value: 0.7971698
+      objectReference: {fileID: 0}
+    - target: {fileID: 5714908791757646638, guid: 1a5a06254280611498cd4b9e6f482934, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.g
+      value: 0.96663594
+      objectReference: {fileID: 0}
+    - target: {fileID: 5714908791757646638, guid: 1a5a06254280611498cd4b9e6f482934, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.r
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1a5a06254280611498cd4b9e6f482934, type: 3}
 --- !u!4 &2223069479739088785 stripped
@@ -6661,9 +6693,41 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4548221116513558813}
     m_Modifications:
+    - target: {fileID: 994693191546152908, guid: f1606f3bfcdc0d941bac5951b9ee57d8, type: 3}
+      propertyPath: InitialModule.size3D
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 994693191546152908, guid: f1606f3bfcdc0d941bac5951b9ee57d8, type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 994693191546152908, guid: f1606f3bfcdc0d941bac5951b9ee57d8, type: 3}
+      propertyPath: InitialModule.startSize.minScalar
+      value: 0.05
+      objectReference: {fileID: 0}
     - target: {fileID: 3079415775423388230, guid: f1606f3bfcdc0d941bac5951b9ee57d8, type: 3}
       propertyPath: m_Name
       value: LargeExplosion
+      objectReference: {fileID: 0}
+    - target: {fileID: 3652780453478765668, guid: f1606f3bfcdc0d941bac5951b9ee57d8, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.b
+      value: 0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 3652780453478765668, guid: f1606f3bfcdc0d941bac5951b9ee57d8, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.g
+      value: 0.95708954
+      objectReference: {fileID: 0}
+    - target: {fileID: 3652780453478765668, guid: f1606f3bfcdc0d941bac5951b9ee57d8, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3934729410960462077, guid: f1606f3bfcdc0d941bac5951b9ee57d8, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3934729410960462077, guid: f1606f3bfcdc0d941bac5951b9ee57d8, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -3.25
       objectReference: {fileID: 0}
     - target: {fileID: 6186856589806618977, guid: f1606f3bfcdc0d941bac5951b9ee57d8, type: 3}
       propertyPath: m_RootOrder
