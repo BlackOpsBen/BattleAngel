@@ -256,6 +256,7 @@ MonoBehaviour:
   explosiveRadius: 10
   eyePrefab: {fileID: 5326558007619536720, guid: f3ac08e08d599e842bfb8a7a6714b49f, type: 3}
   eyeSpawnTransform: {fileID: 3205531930980225432}
+  cryPFXtoStop: {fileID: 2347739146296710924}
 --- !u!114 &2466785891951772986
 MonoBehaviour:
   m_ObjectHideFlags: 0
