@@ -125,17 +125,24 @@ public class Shoot : MonoBehaviour
 
     private void ProcessHit(RaycastHit hit)
     {
-        HitFX hitFx;
-
-        if (hitFx = hit.transform.GetComponent<HitFX>())
+        if (hit.collider.GetComponent<Movement>())
         {
-            Vector3 flatHitNormal = new Vector3(hit.normal.x, 0.0f, hit.normal.z);
-            hitFx.Play(hit.point, Quaternion.LookRotation(flatHitNormal, Vector3.up));
+            Debug.LogWarning("Player hit self!");
         }
+        else
+        {
+            HitFX hitFx;
 
-        DealDamage(hit);
+            if (hitFx = hit.transform.GetComponent<HitFX>())
+            {
+                Vector3 flatHitNormal = new Vector3(hit.normal.x, 0.0f, hit.normal.z);
+                hitFx.Play(hit.point, Quaternion.LookRotation(flatHitNormal, Vector3.up));
+            }
 
-        Instantiate(impactPFX, hit.point, Quaternion.LookRotation(hit.normal));
+            DealDamage(hit);
+
+            Instantiate(impactPFX, hit.point, Quaternion.LookRotation(hit.normal));
+        }
     }
 
     private void DealDamage(RaycastHit hit)
