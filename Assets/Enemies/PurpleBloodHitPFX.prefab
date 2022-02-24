@@ -3786,7 +3786,7 @@ ParticleSystem:
     radiusScale: 0.001
     collidesWith:
       serializedVersion: 2
-      m_Bits: 55
+      m_Bits: 311
     maxCollisionShapes: 256
     quality: 0
     voxelSize: 0.5
@@ -4828,6 +4828,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2190592359596755481}
     m_Modifications:
+    - target: {fileID: 2872165068918572265, guid: c5f838209e384e74aa9839e0d0c6a17a, type: 3}
+      propertyPath: CollisionModule.collidesWith.m_Bits
+      value: 311
+      objectReference: {fileID: 0}
     - target: {fileID: 2872165068918572265, guid: c5f838209e384e74aa9839e0d0c6a17a, type: 3}
       propertyPath: InitialModule.startColor.maxColor.b
       value: 0.4243889

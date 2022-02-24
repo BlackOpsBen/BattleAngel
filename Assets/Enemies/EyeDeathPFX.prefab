@@ -9830,6 +9830,10 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2190592359596755480, guid: 78a6fb497576da34497f275945add39b, type: 3}
+      propertyPath: CollisionModule.collidesWith.m_Bits
+      value: 311
+      objectReference: {fileID: 0}
+    - target: {fileID: 2190592359596755480, guid: 78a6fb497576da34497f275945add39b, type: 3}
       propertyPath: InitialModule.startLifetime.minScalar
       value: 2
       objectReference: {fileID: 0}

@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 304a287341fee08498f98aba2aa4b5d8, type: 3}
+  m_Name: SC_Explosion_Small
+  m_EditorClassIdentifier: 
+  clipOptions:
+  - {fileID: 8300000, guid: 7d44198c8ee5c9c47b48fd51c3461652, type: 3}
+  - {fileID: 8300000, guid: 08ce184d94506bc4d8228d23015a9547, type: 3}
+  - {fileID: 8300000, guid: 2bd67ef0ec19ce74c8e37d96dacafcb6, type: 3}
+  audioMixerGroup: {fileID: -2158395900434604945, guid: aaf23ad257f6bac4280cd05bb073d69c, type: 2}
+  enableModulation: 1
+  pitchMin: 0.95
+  pitchMax: 1.05
+  volumeMin: 0.95
+  volumeMax: 1.05

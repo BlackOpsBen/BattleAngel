@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2872165068918572265}
   - component: {fileID: 2872165068918572264}
   m_Layer: 0
-  m_Name: RedFloorSplatter
+  m_Name: PurpleFloorSplatter 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3841,7 +3841,7 @@ ParticleSystem:
     radiusScale: 0.0001
     collidesWith:
       serializedVersion: 2
-      m_Bits: 55
+      m_Bits: 311
     maxCollisionShapes: 256
     quality: 0
     voxelSize: 0.5
