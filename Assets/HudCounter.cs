@@ -22,6 +22,6 @@ public class HudCounter : MonoBehaviour
     {
         counter.text = count.ToString();
         float percent = (float)count / outOf;
-        barFill.localScale = new Vector3(barFill.localScale.x, startLocalScale * percent);
+        barFill.localScale = new Vector3(barFill.localScale.x, percent);
     }
 }
