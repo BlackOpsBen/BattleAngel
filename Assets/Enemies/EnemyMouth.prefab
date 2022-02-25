@@ -337,6 +337,7 @@ GameObject:
   - component: {fileID: 7757910906811572760}
   - component: {fileID: 3375848611854672973}
   - component: {fileID: 2037371275536291922}
+  - component: {fileID: 1641654861288748677}
   m_Layer: 6
   m_Name: EnemyMouth
   m_TagString: Enemy
@@ -441,6 +442,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHP: 15
+  isPlayer: 0
 --- !u!114 &7757910906811572760
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -534,6 +536,20 @@ MonoBehaviour:
     disableIfWounded: 0
   targetTag: Target
   defaultTag: Enemy
+--- !u!114 &1641654861288748677
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7192427934171372718}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe42a5317df70ab4f896d3309535ed81, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  color: {r: 1, g: 0, b: 0, a: 1}
+  scale: 1
 --- !u!54 &9011937250320656255
 Rigidbody:
   m_ObjectHideFlags: 0
