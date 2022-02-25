@@ -12,22 +12,4 @@ public class RevealEnemies : MonoBehaviour
             reveal.Reveal();
         }
     }
-
-    /*private void OnTriggerEnter(Collider other)
-    {
-        RevealedByLight reveal;
-        if (reveal = other.gameObject.GetComponent<RevealedByLight>())
-        {
-            reveal.SetVisibility(true);
-        }
-    }*/
-
-    /*private void OnTriggerExit(Collider other)
-    {
-        RevealedByLight reveal;
-        if (reveal = other.gameObject.GetComponent<RevealedByLight>())
-        {
-            reveal.SetVisibility(false);
-        }
-    }*/
 }

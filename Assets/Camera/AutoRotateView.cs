@@ -5,8 +5,6 @@ using UnityEngine;
 
 public class AutoRotateView : MonoBehaviour
 {
-    private Movement movement;
-
     [SerializeField] private float maxRotationSpeed = 2.0f;
     [SerializeField] private float accelerationTime = 2.0f;
     [SerializeField] private float deccelerationTime = 1.0f;
@@ -14,17 +12,13 @@ public class AutoRotateView : MonoBehaviour
 
     private void Update()
     {
-        UpdateRotationSpeedPercent();
-        RotateTowardView();
+        Movement movement = GameManager.Instance.GetPlayerInstance().GetComponent<Movement>();
+        UpdateRotationSpeedPercent(movement);
+        RotateTowardView(movement);
     }
 
-    private void UpdateRotationSpeedPercent()
+    private void UpdateRotationSpeedPercent(Movement movement)
     {
-        if (movement == null)
-        {
-            movement = GameManager.Instance.GetPlayerInstance().GetComponent<Movement>();
-        }
-
         if (movement.GetIsMoving())
         {
             rotationSpeedPercent += Time.deltaTime / accelerationTime;
@@ -37,7 +31,7 @@ public class AutoRotateView : MonoBehaviour
         rotationSpeedPercent = Mathf.Clamp01(rotationSpeedPercent);
     }
 
-    private void RotateTowardView()
+    private void RotateTowardView(Movement movement)
     {
         Quaternion facingRotation = Quaternion.LookRotation(movement.transform.forward);
         transform.rotation = Quaternion.Slerp(transform.rotation, facingRotation, maxRotationSpeed * rotationSpeedPercent * Time.deltaTime);
