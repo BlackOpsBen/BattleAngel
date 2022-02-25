@@ -20,8 +20,6 @@ public class EyeStompAttack : MonoBehaviour, IToggleWhenRevealed
 
     private Animator animator;
 
-    private NavMeshMovement movement;
-
     private bool isAttacking = false;
 
     private bool isActive = true;
@@ -32,7 +30,6 @@ public class EyeStompAttack : MonoBehaviour, IToggleWhenRevealed
         moveSpeed = navAgent.speed;
         angularSpeed = navAgent.angularSpeed;
         animator = GetComponent<Animator>();
-        movement = GetComponent<NavMeshMovement>();
     }
 
     private void Update()
@@ -43,7 +40,7 @@ public class EyeStompAttack : MonoBehaviour, IToggleWhenRevealed
 
     private void SetIsAttacking()
     {
-        float distance = Vector3.Distance(transform.position, movement.GetTargetPlayer().position);
+        float distance = Vector3.Distance(transform.position, GameManager.Instance.GetPlayerInstance().transform.position);
 
         isAttacking = distance < attackDistance;
 
@@ -71,7 +68,7 @@ public class EyeStompAttack : MonoBehaviour, IToggleWhenRevealed
 
         if (GetPlayerInRange(leftStomp.transform.position))
         {
-            movement.GetTargetPlayer().GetComponent<Health>().Damage(damageAmount);
+            GameManager.Instance.GetPlayerInstance().GetComponent<Health>().Damage(damageAmount);
         }
 
         AudioManager.Instance.PlaySound("SC_Stomp");
@@ -84,7 +81,7 @@ public class EyeStompAttack : MonoBehaviour, IToggleWhenRevealed
 
         if (GetPlayerInRange(rightStomp.transform.position))
         {
-            movement.GetTargetPlayer().GetComponent<Health>().Damage(damageAmount);
+            GameManager.Instance.GetPlayerInstance().GetComponent<Health>().Damage(damageAmount);
         }
 
         AudioManager.Instance.PlaySound("SC_Stomp");
@@ -93,7 +90,7 @@ public class EyeStompAttack : MonoBehaviour, IToggleWhenRevealed
 
     private bool GetPlayerInRange(Vector3 fromPosition)
     {
-        Vector3 playerPos = movement.GetTargetPlayer().position;
+        Vector3 playerPos = GameManager.Instance.GetPlayerInstance().transform.position;
         float distance = Vector3.Distance(fromPosition, playerPos);
         return distance < damageRadius;
     }

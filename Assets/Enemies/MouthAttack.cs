@@ -11,16 +11,13 @@ public class MouthAttack : MonoBehaviour, IToggleWhenRevealed
 
     private Animator animator;
 
-    private NavMeshMovement movement;
-
     private bool isAttacking = false;
 
     private bool isActive = true;
 
-    private void Awake()
+    private void Start()
     {
         animator = GetComponent<Animator>();
-        movement = GetComponent<NavMeshMovement>();
     }
 
     private void Update()
@@ -31,7 +28,7 @@ public class MouthAttack : MonoBehaviour, IToggleWhenRevealed
 
     private void SetIsAttacking()
     {
-        float distance = Vector3.Distance(transform.position, movement.GetTargetPlayer().position);
+        float distance = Vector3.Distance(transform.position, GameManager.Instance.GetPlayerInstance().transform.position);
 
         isAttacking = distance < attackDistance;
 
@@ -42,7 +39,7 @@ public class MouthAttack : MonoBehaviour, IToggleWhenRevealed
     {
         if (isAttacking && isActive)
         {
-            Quaternion lookRotation = Quaternion.LookRotation(movement.GetTargetPlayer().position - transform.position);
+            Quaternion lookRotation = Quaternion.LookRotation(GameManager.Instance.GetPlayerInstance().transform.position - transform.position);
             Quaternion lerpedLook = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * aimSpeed);
             transform.rotation = lerpedLook;
         }

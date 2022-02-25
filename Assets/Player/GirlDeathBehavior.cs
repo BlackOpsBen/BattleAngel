@@ -7,6 +7,7 @@ public class GirlDeathBehavior : DefaultDeathBehavior
 {
     [SerializeField] private Rigidbody rigidbodyToDisable;
     [SerializeField] private ShakePreset shakePreset;
+    [SerializeField] private float respawnDelay = 4.0f;
 
     public override void Die()
     {
@@ -17,5 +18,7 @@ public class GirlDeathBehavior : DefaultDeathBehavior
         Shaker.ShakeAll(shakePreset);
 
         base.Die();
+
+        GameManager.Instance.Respawn(respawnDelay);
     }
 }

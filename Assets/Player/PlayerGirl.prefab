@@ -963,6 +963,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0747dbbfacd91ec43b0eadcde4c3f6f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ammoPerMag: 200
 --- !u!54 &3717199354508127635
 Rigidbody:
   m_ObjectHideFlags: 0

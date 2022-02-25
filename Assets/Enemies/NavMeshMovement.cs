@@ -7,13 +7,10 @@ public class NavMeshMovement : MonoBehaviour, IToggleWhenRevealed
 {
     private NavMeshAgent navMeshAgent;
 
-    private Transform targetPlayer;
-
     private bool isActive = true;
 
     private void Awake()
     {
-        targetPlayer = FindObjectOfType<Movement>().transform;
         navMeshAgent = GetComponent<NavMeshAgent>();
     }
 
@@ -22,17 +19,12 @@ public class NavMeshMovement : MonoBehaviour, IToggleWhenRevealed
         if (isActive)
         {
             navMeshAgent.isStopped = false;
-            navMeshAgent.destination = targetPlayer.position;
+            navMeshAgent.destination = GameManager.Instance.GetPlayerInstance().transform.position;
         }
         else
         {
             navMeshAgent.isStopped = true;
         }
-    }
-
-    public Transform GetTargetPlayer()
-    {
-        return targetPlayer;
     }
 
     public void ToggleActive(bool active)

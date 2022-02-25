@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class IsSeeThrough : MonoBehaviour
 {
-    [SerializeField] static float blendTime = 0.5f;
-
     private float blend = 1.0f;
 
     private int direction = 1;

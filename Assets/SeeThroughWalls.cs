@@ -4,20 +4,18 @@ using UnityEngine;
 
 public class SeeThroughWalls : MonoBehaviour
 {
-    private Transform player;
     private Transform cameraTransform;
     [SerializeField] private LayerMask layerMask;
     private float yOffset = 1.0f;
 
     private void Start()
     {
-        player = FindObjectOfType<Movement>().transform;
         cameraTransform = Camera.main.transform;
     }
 
     private void LateUpdate()
     {
-        Vector3 playerOffsetPos = player.position + (Vector3.up * yOffset);
+        Vector3 playerOffsetPos = GameManager.Instance.GetPlayerInstance().transform.position + (Vector3.up * yOffset);
 
         Vector3 direction = playerOffsetPos - cameraTransform.position;
 

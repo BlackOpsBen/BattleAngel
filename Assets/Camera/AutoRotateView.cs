@@ -12,11 +12,6 @@ public class AutoRotateView : MonoBehaviour
     [SerializeField] private float deccelerationTime = 1.0f;
     private float rotationSpeedPercent = 0.0f;
 
-    private void Awake()
-    {
-        movement = FindObjectOfType<Movement>();
-    }
-
     private void Update()
     {
         UpdateRotationSpeedPercent();
@@ -25,6 +20,11 @@ public class AutoRotateView : MonoBehaviour
 
     private void UpdateRotationSpeedPercent()
     {
+        if (movement == null)
+        {
+            movement = GameManager.Instance.GetPlayerInstance().GetComponent<Movement>();
+        }
+
         if (movement.GetIsMoving())
         {
             rotationSpeedPercent += Time.deltaTime / accelerationTime;
