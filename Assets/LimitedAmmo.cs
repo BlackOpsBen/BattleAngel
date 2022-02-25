@@ -14,10 +14,12 @@ public class LimitedAmmo : MonoBehaviour
         RefillAmmo();
     }
 
-    private void RefillAmmo()
+    public void RefillAmmo()
     {
         currentAmmo = ammoPerMag;
         UpdateHud();
+
+        // TODO play pickup dialog
     }
 
     public bool GetHasAmmo()

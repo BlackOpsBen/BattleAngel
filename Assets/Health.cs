@@ -23,10 +23,15 @@ public class Health : MonoBehaviour, IHealthType
         deathBehavior = GetComponent<IDie>();
     }
 
-    private void ResetHP()
+    public void ResetHP()
     {
         currentHP = maxHP;
         UpdateHUD();
+
+        if (isPlayer)
+        {
+            // TODO play pickup dialog
+        }
     }
 
     private void UpdateHUD()
