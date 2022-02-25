@@ -64,6 +64,19 @@ public class ObjectiveDeathBehavior : MonoBehaviour, IDie
 
             Shaker.ShakeAll(explosion.shakePreset);
         }
+
+        UpdateObjective();
+    }
+
+    private static void UpdateObjective()
+    {
+        GameManager.Instance.numDestroyed++;
+        ObjectiveListItem objective = GameManager.Instance.objectiveUI.GetObjective(GameManager.Instance.degeneratorObjectiveName);
+        objective.InitializeObjective(GameManager.Instance.degeneratorObjectiveName, " ( " + GameManager.Instance.numDestroyed + " / " + GameManager.Instance.initialNumDegenerators + " )");
+        if (GameManager.Instance.numDestroyed == GameManager.Instance.initialNumDegenerators)
+        {
+            objective.MarkComplete();
+        }
     }
 
     [System.Serializable]

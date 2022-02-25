@@ -16,6 +16,12 @@ public class GameManager : MonoBehaviour
     [SerializeField] private HudCounter ammoCounter;
     [SerializeField] private HudCounter healthCounter;
 
+    public ObjectiveUI objectiveUI;
+
+    public int initialNumDegenerators;
+    public int numDestroyed = 0;
+    public string degeneratorObjectiveName = "Destroy the Degenerators";
+
     private void Awake()
     {
         if (Instance != null)
@@ -31,6 +37,9 @@ public class GameManager : MonoBehaviour
         {
             Respawn();
         }
+
+        initialNumDegenerators = FindObjectsOfType<ObjectiveDeathBehavior>().Length;
+        objectiveUI.NewObjective(degeneratorObjectiveName, " ( 0 / 4 )");
     }
 
     // Start is called before the first frame update
