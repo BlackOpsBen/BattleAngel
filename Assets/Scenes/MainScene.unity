@@ -558,6 +558,7 @@ GameObject:
   m_Component:
   - component: {fileID: 368336021}
   - component: {fileID: 368336022}
+  - component: {fileID: 368336023}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -599,6 +600,18 @@ MonoBehaviour:
   respawnSecondsDisplay: {fileID: 919994028}
   ammoCounter: {fileID: 1709371990}
   healthCounter: {fileID: 2102432613}
+--- !u!114 &368336023
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 368336020}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b41c8abd7e007a40983c165d2dcbad3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &452443503
 GameObject:
   m_ObjectHideFlags: 0
