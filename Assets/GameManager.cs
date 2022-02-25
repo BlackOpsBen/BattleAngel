@@ -46,6 +46,11 @@ public class GameManager : MonoBehaviour
 
     public void Respawn()
     {
+        if (playerInstance != null)
+        {
+            Destroy(playerInstance.GetComponent<PlayerInput>());
+        }
+        
         playerInstance = Instantiate(playerPrefab, respawnPoint.position, Quaternion.identity);
         playerInstance.GetComponent<PlayerInput>().ActivateInput();
     }
