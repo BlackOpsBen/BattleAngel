@@ -40,8 +40,22 @@ public class AppearOnMap : MonoBehaviour
 
         float percent = MiniMap.Instance.mapDistCurve.Evaluate(sqrDistFromPlayer / MiniMap.Instance.maxDistSqr);
 
-        Vector3 direction = Vector3.up;
+        Vector3 direction = GetDirection();
 
         return direction * (mapSize/2) * percent;
+    }
+
+    private Vector3 GetDirection()
+    {
+        Vector3 yFlatPos = new Vector3(transform.position.x, Camera.main.transform.position.y, transform.position.z);
+        Vector3 toAdd = Camera.main.transform.position - GameManager.Instance.GetPlayerInstance().transform.position;
+        Vector3 correctedPos = yFlatPos + toAdd;
+
+
+        Vector3 localOffset = Camera.main.transform.InverseTransformPoint(correctedPos);
+        Vector3 correctedLocalOffset = new Vector3(localOffset.x, localOffset.z, 0.0f);
+        correctedLocalOffset.Normalize();
+        Debug.Log("Offset: " + correctedLocalOffset);
+        return correctedLocalOffset;
     }
 }
