@@ -71,6 +71,7 @@ public class MiniMap : MonoBehaviour
         foreach (Image dot in dotPool)
         {
             dot.color = Color.clear;
+            dot.rectTransform.localScale = Vector3.one;
         }
     }
 

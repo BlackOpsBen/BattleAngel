@@ -380,7 +380,7 @@ MonoBehaviour:
     m_RotationOrder: 4
   maxDistSqr: 5000
   dotImagePrefab: {fileID: 8874155319404552752, guid: 98164179984599246937a0ed278013c0, type: 3}
-  dotContainer: {fileID: 3487857682682163719}
+  dotContainer: {fileID: 3487857682056371952}
 --- !u!1001 &5422344034905358572
 PrefabInstance:
   m_ObjectHideFlags: 0

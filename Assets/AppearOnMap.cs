@@ -55,7 +55,6 @@ public class AppearOnMap : MonoBehaviour
         Vector3 localOffset = Camera.main.transform.InverseTransformPoint(correctedPos);
         Vector3 correctedLocalOffset = new Vector3(localOffset.x, localOffset.z, 0.0f);
         correctedLocalOffset.Normalize();
-        Debug.Log("Offset: " + correctedLocalOffset);
         return correctedLocalOffset;
     }
 }

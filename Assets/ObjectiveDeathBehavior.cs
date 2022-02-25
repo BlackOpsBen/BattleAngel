@@ -23,10 +23,21 @@ public class ObjectiveDeathBehavior : MonoBehaviour, IDie
     public void Die()
     {
         GetComponent<SpawnArea>().SetIsSpawning(false);
+        
+        RemoveFromMiniMap();
 
         SpawnManager.Instance.OnObjectiveDestroyed();
 
         StartCoroutine(PlaySequence());
+    }
+
+    private void RemoveFromMiniMap()
+    {
+        AppearOnMap appearOnMap;
+        if (appearOnMap = GetComponent<AppearOnMap>())
+        {
+            MiniMap.Instance.RemoveItemFromMap(appearOnMap);
+        }
     }
 
     private IEnumerator PlaySequence()

@@ -96,5 +96,20 @@ public class DefaultDeathBehavior : MonoBehaviour, IDie
         }
 
         AudioManager.Instance.PlaySound("SC_EnemyDeath");
+
+        RemoveFromMiniMap();
+    }
+
+    private void RemoveFromMiniMap()
+    {
+        AppearOnMap appearOnMap;
+        if (appearOnMap = GetComponent<AppearOnMap>())
+        {
+            MiniMap.Instance.RemoveItemFromMap(appearOnMap);
+        }
+        else
+        {
+            Debug.LogWarning("This was not on the minimap.");
+        }
     }
 }
