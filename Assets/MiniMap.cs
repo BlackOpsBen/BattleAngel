@@ -8,6 +8,9 @@ public class MiniMap : MonoBehaviour
 {
     public static MiniMap Instance { get; private set; }
 
+    [SerializeField] public AnimationCurve mapDistCurve;
+    [SerializeField] public float maxDistSqr = 5000.0f;
+
     private List<AppearOnMap> itemsOnMap = new List<AppearOnMap>();
 
     private List<Image> dotPool = new List<Image>();
@@ -15,6 +18,8 @@ public class MiniMap : MonoBehaviour
     [SerializeField] private Image dotImagePrefab;
 
     [SerializeField] private Transform dotContainer;
+
+    private float mapSize;
 
     private void Awake()
     {
@@ -26,6 +31,8 @@ public class MiniMap : MonoBehaviour
         {
             Instance = this;
         }
+
+        mapSize = GetComponent<RectTransform>().sizeDelta.x;
     }
 
     public void AddItemToMap(AppearOnMap item)
@@ -54,7 +61,7 @@ public class MiniMap : MonoBehaviour
                 Image image = GetImage(i);
                 image.color = itemsOnMap[i].GetColor();
                 image.rectTransform.localScale = image.rectTransform.localScale * itemsOnMap[i].GetScale();
-                image.rectTransform.localPosition = GetDotPosition();
+                image.rectTransform.localPosition = itemsOnMap[i].GetMapPosition(mapSize);
             }
         }
     }
@@ -79,10 +86,5 @@ public class MiniMap : MonoBehaviour
             dotPool.Add(newImage);
             return newImage;
         }
-    }
-
-    private Vector3 GetDotPosition()
-    {
-        return Vector3.zero;
     }
 }

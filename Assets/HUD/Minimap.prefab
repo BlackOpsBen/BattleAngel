@@ -341,7 +341,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_AspectMode: 1
-  m_AspectRatio: 0.94715744
+  m_AspectRatio: 1
 --- !u!114 &8694659330933682416
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -354,6 +354,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e01776dfe5765e4408c0ef5a1964c7fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mapDistCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 180.61304
+      outSlope: 180.61304
+      tangentMode: 0
+      weightedMode: 3
+      inWeight: 0
+      outWeight: 0.004495054
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0.0032716226
+      outSlope: 0.0032716226
+      tangentMode: 0
+      weightedMode: 3
+      inWeight: 0.55708456
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  maxDistSqr: 5000
   dotImagePrefab: {fileID: 8874155319404552752, guid: 98164179984599246937a0ed278013c0, type: 3}
   dotContainer: {fileID: 3487857682682163719}
 --- !u!1001 &5422344034905358572
