@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private ScaleFadeSeconds respawnSecondsDisplay;
     [SerializeField] private HudCounter ammoCounter;
     [SerializeField] private HudCounter healthCounter;
+    [SerializeField] private Transform playerPosTracker;
 
     public ObjectiveUI objectiveUI;
 
@@ -40,6 +41,11 @@ public class GameManager : MonoBehaviour
 
         initialNumDegenerators = FindObjectsOfType<ObjectiveDeathBehavior>().Length;
         objectiveUI.NewObjective(degeneratorObjectiveName, " ( 0 / 4 )");
+    }
+
+    private void Update()
+    {
+        playerPosTracker.position = playerInstance.transform.position;
     }
 
     // Start is called before the first frame update

@@ -179,7 +179,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 2.14
-  m_Speed: 6
+  m_Speed: 9
   m_Acceleration: 1000
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -323,7 +323,6 @@ MonoBehaviour:
   minCutoffHeight: -0.45
   maxCutoffHeight: 15
   blendSpeed: 2
-  debug: 1
 --- !u!114 &6632919432529895456
 MonoBehaviour:
   m_ObjectHideFlags: 0
