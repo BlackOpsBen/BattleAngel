@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using MilkShake;
 
 public class ObjectiveDeathBehavior : MonoBehaviour, IDie
 {
@@ -60,6 +61,8 @@ public class ObjectiveDeathBehavior : MonoBehaviour, IDie
             {
                 AudioManager.Instance.PlaySoundLoop(fireSoundName, transform, gameObject.name);
             }
+
+            Shaker.ShakeAll(explosion.shakePreset);
         }
     }
 
@@ -70,5 +73,6 @@ public class ObjectiveDeathBehavior : MonoBehaviour, IDie
         public GameObject[] itemsToEnable;
         public string explosionSound;
         public bool playFireSoundLoop;
+        public ShakePreset shakePreset;
     }
 }

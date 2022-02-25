@@ -12,7 +12,7 @@ public class ScaleFadeSeconds : MonoBehaviour
     private float startSize;
     private float sizeDifference;
 
-    private void Start()
+    private void Awake()
     {
         seconds = GetComponent<TextMeshProUGUI>();
         startSize = seconds.fontSize;
@@ -29,6 +29,7 @@ public class ScaleFadeSeconds : MonoBehaviour
 
     public void SetDigit(int digit)
     {
+        Debug.Log("Digit: " + digit);
         seconds.text = digit.ToString();
         seconds.fontSize = startSize;
         seconds.color = Color.white;

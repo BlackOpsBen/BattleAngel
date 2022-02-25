@@ -129,6 +129,7 @@ MonoBehaviour:
     - {fileID: 5529013186402817793}
     explosionSound: SC_Explosion_Large
     playFireSoundLoop: 1
+    shakePreset: {fileID: 11400000, guid: 35db2de56ac60d24593dd10035ef22a4, type: 2}
   - delay: 1
     itemsToEnable:
     - {fileID: 7965204631957792183}
@@ -136,6 +137,7 @@ MonoBehaviour:
     - {fileID: 377059866146101186}
     explosionSound: SC_Explosion_Small
     playFireSoundLoop: 0
+    shakePreset: {fileID: 11400000, guid: 35db2de56ac60d24593dd10035ef22a4, type: 2}
   - delay: 0.3
     itemsToEnable:
     - {fileID: 7965204631808586232}
@@ -143,6 +145,7 @@ MonoBehaviour:
     - {fileID: 4931017494719434773}
     explosionSound: SC_Explosion_Small
     playFireSoundLoop: 0
+    shakePreset: {fileID: 11400000, guid: 35db2de56ac60d24593dd10035ef22a4, type: 2}
   - delay: 0.1
     itemsToEnable:
     - {fileID: 7965204632220930325}
@@ -150,6 +153,7 @@ MonoBehaviour:
     - {fileID: 4931017495415411869}
     explosionSound: SC_Explosion_Small
     playFireSoundLoop: 0
+    shakePreset: {fileID: 11400000, guid: 35db2de56ac60d24593dd10035ef22a4, type: 2}
   - delay: 0.05
     itemsToEnable:
     - {fileID: 7965204632645629228}
@@ -157,6 +161,7 @@ MonoBehaviour:
     - {fileID: 4931017495416871115}
     explosionSound: SC_Explosion_Small
     playFireSoundLoop: 0
+    shakePreset: {fileID: 11400000, guid: 35db2de56ac60d24593dd10035ef22a4, type: 2}
   fireSoundName: SC_Fire
   soundToStop: {fileID: 4548221116555838760}
   targetToReTag: {fileID: 4548221116513558813}
