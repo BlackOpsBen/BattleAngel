@@ -24,9 +24,13 @@ public class Shoot : MonoBehaviour
 
     private AimAssist aimAssist;
 
+    private bool limitedAmmo = false;
+    private LimitedAmmo ammo;
+
     private void Awake()
     {
         aimAssist = GetComponent<AimAssist>();
+        limitedAmmo = ammo = GetComponent<LimitedAmmo>();
     }
 
     public void OnShoot(InputAction.CallbackContext context)
@@ -46,20 +50,39 @@ public class Shoot : MonoBehaviour
     {
         if (isFiring)
         {
-            shotTimer += Time.deltaTime;
-
-            float shotInterval = 1.0f / shotsPerSecond;
-
-            if (shotTimer > shotInterval)
+            if (limitedAmmo)
             {
-                shotTimer = 0.0f;
-
-                PerformShot();
+                if (ammo.GetHasAmmo())
+                {
+                    AttemptShoot();
+                }
+                else
+                {
+                    // TODO play out of ammo dialog & click
+                }
+            }
+            else
+            {
+                AttemptShoot();
             }
         }
         else
         {
             shotTimer = float.MaxValue;
+        }
+    }
+
+    private void AttemptShoot()
+    {
+        shotTimer += Time.deltaTime;
+
+        float shotInterval = 1.0f / shotsPerSecond;
+
+        if (shotTimer > shotInterval)
+        {
+            shotTimer = 0.0f;
+
+            PerformShot();
         }
     }
 
