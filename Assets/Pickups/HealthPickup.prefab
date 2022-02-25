@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pickupPFX: {fileID: 2083388790363307426}
-  pickupSoundName: SC_Pickup_Health
+  pickupSoundName: pickup_health
+  mixerGroup: {fileID: 4341858783511570920, guid: aaf23ad257f6bac4280cd05bb073d69c, type: 2}
   meshToHide: {fileID: 2754344154117800392}
 --- !u!1001 &3150964712788821017
 PrefabInstance:

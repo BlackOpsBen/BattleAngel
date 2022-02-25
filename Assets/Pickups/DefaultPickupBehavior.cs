@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class DefaultPickupBehavior : MonoBehaviour, IPickup
 {
     [SerializeField] private GameObject pickupPFX;
     [SerializeField] private string pickupSoundName;
+    [SerializeField] private AudioMixerGroup mixerGroup;
     [SerializeField] private MeshRenderer meshToHide;
 
     private void OnTriggerEnter(Collider other)
@@ -22,7 +24,7 @@ public class DefaultPickupBehavior : MonoBehaviour, IPickup
 
         pickupPFX.SetActive(true);
 
-        AudioManager.Instance.PlaySound(pickupSoundName);
+        AudioManager.Instance.PlaySound(pickupSoundName, mixerGroup.name);
 
         Destroy(gameObject, 1.0f);
     }

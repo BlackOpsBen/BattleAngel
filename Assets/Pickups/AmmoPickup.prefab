@@ -4933,7 +4933,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pickupPFX: {fileID: 8599733096099361388}
-  pickupSoundName: SC_Pickup_Ammo
+  pickupSoundName: pickup_ammo
+  mixerGroup: {fileID: 4341858783511570920, guid: aaf23ad257f6bac4280cd05bb073d69c, type: 2}
   meshToHide: {fileID: 2228347308328482975}
 --- !u!1 &4924097923251579898
 GameObject:
