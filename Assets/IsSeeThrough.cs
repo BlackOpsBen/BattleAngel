@@ -20,7 +20,10 @@ public class IsSeeThrough : MonoBehaviour
         blend += Time.deltaTime * direction;
         blend = Mathf.Clamp01(blend);
 
-        meshRenderer.material.SetFloat("_AlphaBlend", blend);
+        foreach (Material material in meshRenderer.materials)
+        {
+            material.SetFloat("_AlphaBlend", blend);
+        }
     }
 
     private void LateUpdate()

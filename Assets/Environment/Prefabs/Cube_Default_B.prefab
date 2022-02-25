@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4540817480375443814}
   - component: {fileID: 4540817480375443813}
   - component: {fileID: 4540817480375443812}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube_Default_B
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28,7 +28,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4540817480375443819}
-  m_LocalRotation: {x: -0.7071068, y: -0.000000030908623, z: -0.000000030908623, w: 0.7071068}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: -0.7071068}
   m_LocalPosition: {x: 4, y: -0, z: -8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -124,3 +124,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gridSize: {x: 2, y: 2, z: 2}
   scaleIncrement: 0.5
+  rotationIncrement: 45
