@@ -897,6 +897,8 @@ MonoBehaviour:
   respawnPoint: {fileID: 643754904}
   respawnUI: {fileID: 2140451942}
   respawnSecondsDisplay: {fileID: 919994028}
+  ammoCounter: {fileID: 1709371990}
+  healthCounter: {fileID: 2102432613}
 --- !u!1 &452443503
 GameObject:
   m_ObjectHideFlags: 0
@@ -2135,7 +2137,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fontScale: 0.5
-  fadeTime: 0.5
 --- !u!114 &919994029
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3784,6 +3785,7 @@ GameObject:
   - component: {fileID: 1709371989}
   - component: {fileID: 1709371988}
   - component: {fileID: 1709371987}
+  - component: {fileID: 1709371990}
   m_Layer: 5
   m_Name: Ammo
   m_TagString: Untagged
@@ -3865,6 +3867,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1709371985}
   m_CullTransparentMesh: 1
+--- !u!114 &1709371990
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1709371985}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11557214a888c3344a1dcab59bdc465b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  counter: {fileID: 490187205}
+  barFill: {fileID: 91592147}
 --- !u!1 &1748715867
 GameObject:
   m_ObjectHideFlags: 0
@@ -4366,6 +4382,7 @@ GameObject:
   - component: {fileID: 2102432612}
   - component: {fileID: 2102432611}
   - component: {fileID: 2102432610}
+  - component: {fileID: 2102432613}
   m_Layer: 5
   m_Name: Health
   m_TagString: Untagged
@@ -4447,6 +4464,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2102432608}
   m_CullTransparentMesh: 1
+--- !u!114 &2102432613
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2102432608}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11557214a888c3344a1dcab59bdc465b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  counter: {fileID: 1526461801}
+  barFill: {fileID: 716376243}
 --- !u!1 &2105919836
 GameObject:
   m_ObjectHideFlags: 0

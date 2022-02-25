@@ -842,6 +842,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHP: 100
+  isPlayer: 1
 --- !u!114 &8325303763286663557
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -913,6 +914,7 @@ MonoBehaviour:
   explosiveRadius: 5
   rigidbodyToDisable: {fileID: 8325303763286663562}
   shakePreset: {fileID: 11400000, guid: 8fad704fb2f152e49bacc14d8ea18486, type: 2}
+  respawnDelay: 4
 --- !u!114 &4251681020914583814
 MonoBehaviour:
   m_ObjectHideFlags: 0

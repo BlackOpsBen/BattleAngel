@@ -13,6 +13,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Transform respawnPoint;
     [SerializeField] private GameObject respawnUI;
     [SerializeField] private ScaleFadeSeconds respawnSecondsDisplay;
+    [SerializeField] private HudCounter ammoCounter;
+    [SerializeField] private HudCounter healthCounter;
 
     private void Awake()
     {
@@ -42,6 +44,16 @@ public class GameManager : MonoBehaviour
     public GameObject GetPlayerInstance()
     {
         return playerInstance;
+    }
+
+    public HudCounter GetAmmoCounter()
+    {
+        return ammoCounter;
+    }
+
+    public HudCounter GetHealthCounter()
+    {
+        return healthCounter;
     }
 
     public void Respawn()

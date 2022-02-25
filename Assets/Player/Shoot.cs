@@ -88,6 +88,8 @@ public class Shoot : MonoBehaviour
 
     private void PerformShot()
     {
+        ammo.UseAmmo();
+
         AudioManager.Instance.PlaySound("SC_Gun", transform);
 
         muzzlePFX.PlayAll();

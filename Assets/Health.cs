@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,6 +6,8 @@ using UnityEngine;
 public class Health : MonoBehaviour, IHealthType
 {
     [SerializeField] private int maxHP = 100;
+    [SerializeField] private bool isPlayer = false;
+
     private int currentHP;
     private bool invincible = false;
 
@@ -15,9 +18,23 @@ public class Health : MonoBehaviour, IHealthType
 
     private void Start()
     {
-        currentHP = maxHP;
+        ResetHP();
         hurtBehavior = GetComponent<IHurt>();
         deathBehavior = GetComponent<IDie>();
+    }
+
+    private void ResetHP()
+    {
+        currentHP = maxHP;
+        UpdateHUD();
+    }
+
+    private void UpdateHUD()
+    {
+        if (isPlayer)
+        {
+            GameManager.Instance.GetHealthCounter().SetCounter(currentHP, maxHP);
+        }
     }
 
     public void Damage(int damage)
@@ -25,6 +42,8 @@ public class Health : MonoBehaviour, IHealthType
         if (!invincible && !isDead)
         {
             currentHP -= damage;
+
+            UpdateHUD();
 
             if (hurtBehavior != null)
             {
