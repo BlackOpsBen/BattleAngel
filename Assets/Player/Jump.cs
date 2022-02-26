@@ -20,7 +20,23 @@ public class Jump : MonoBehaviour
     public bool isInAir = false;
     public bool newState = false;
 
+    public bool isJumping = false;
+    public bool hasJumped = false;
+
     private void Update()
+    {
+        if (hasJumped && GetIsTouchingGround())
+        {
+            animator.SetTrigger("Land");
+            hasJumped = false;
+        }
+        
+        //OldJump();
+
+        UpdateApex();
+    }
+
+    private void OldJump()
     {
         newState = !GetIsTouchingGround();
         if (!newState && isInAir)
@@ -38,8 +54,6 @@ public class Jump : MonoBehaviour
             apexHeight = float.MinValue;
         }
         isInAir = newState;
-
-        UpdateApex();
     }
 
     private void UpdateApex()
@@ -50,25 +64,38 @@ public class Jump : MonoBehaviour
         }
     }
 
+    // Called by input to ATTEMPT jump
     public void OnJump(InputAction.CallbackContext context)
     {
         if (context.performed)
         {
-            if (!isInAir)
+            if (!isJumping && GetIsTouchingGround())
             {
                 StartJumpAnimation();
             }
+            /*if (!isInAir)
+            {
+                StartJumpAnimation();
+            }*/
         }
     }
 
+    // Called by animation event
     public void OnJumpEvent()
     {
         PerformJump();
     }
 
+    public void OnHasJumpedEvent()
+    {
+        isJumping = false;
+        hasJumped = true;
+    }
+
     private void StartJumpAnimation()
     {
         animator.SetTrigger("Jump");
+        isJumping = true;
     }
 
     private void PerformJump()

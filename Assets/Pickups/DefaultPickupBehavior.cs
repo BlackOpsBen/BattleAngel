@@ -26,6 +26,12 @@ public class DefaultPickupBehavior : MonoBehaviour, IPickup
 
         AudioManager.Instance.PlaySound(pickupSoundName, mixerGroup.name);
 
+        AppearOnMap appearOnMap = GetComponent<AppearOnMap>();
+        if (appearOnMap != null)
+        {
+            MiniMap.Instance.RemoveItemFromMap(appearOnMap);
+        }
+
         Destroy(gameObject, 1.0f);
     }
 }

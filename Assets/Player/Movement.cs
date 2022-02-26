@@ -64,7 +64,8 @@ public class Movement : MonoBehaviour
 
         Vector3 relativeMoveDirection = relativeForward * lerpMove.z + relativeRight * lerpMove.x;
 
-        transform.position += relativeMoveDirection * Time.deltaTime * moveSpeed;
+        //transform.position += relativeMoveDirection * Time.deltaTime * moveSpeed;
+        rb.MovePosition(rb.position + relativeMoveDirection * Time.deltaTime * moveSpeed);
 
         //characterController.Move(relativeMoveDirection * Time.deltaTime * moveSpeed);
     }

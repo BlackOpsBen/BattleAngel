@@ -47,6 +47,11 @@ public class GameManager : MonoBehaviour
     {
         playerPosTracker.position = playerInstance.transform.position;
         playerPosTracker.rotation = playerInstance.transform.rotation;
+
+        if (playerInstance.transform.position.y < -10.0f)
+        {
+            playerInstance.GetComponent<Health>().Damage(1000);
+        }
     }
 
     // Start is called before the first frame update
