@@ -426,7 +426,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86a677c29d485194aafecec91e4d17b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackDistance: 10
+  attackDistance: 20
   aimSpeed: 1
   spitPFX: {fileID: 4583303837979749464}
 --- !u!114 &3184861451369519675
@@ -675,6 +675,7 @@ MonoBehaviour:
   hitPfx:
   - {fileID: 8975984756514930159}
   hitSoundName: SC_BloodHit
+  is3DSound: 0
 --- !u!114 &5855517425053435542
 MonoBehaviour:
   m_ObjectHideFlags: 0
