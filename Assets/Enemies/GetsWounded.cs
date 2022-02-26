@@ -42,6 +42,8 @@ public class GetsWounded : MonoBehaviour
     public void OnCryStartEvent()
     {
         cryPFX.Play();
+
+        GameManager.Instance.GetComponent<GonnaCryDialog>().PlaySound();
     }
 
     public void OnCryEndEvent()

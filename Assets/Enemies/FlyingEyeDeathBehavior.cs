@@ -17,8 +17,6 @@ public class FlyingEyeDeathBehavior : DefaultDeathBehavior
 
         Shaker.ShakeAll(shakePreset);
 
-        // TODO play eye death sound
-
         base.Die();
     }
 }
