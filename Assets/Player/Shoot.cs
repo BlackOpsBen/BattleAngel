@@ -35,7 +35,7 @@ public class Shoot : MonoBehaviour
 
     public void OnShoot(InputAction.CallbackContext context)
     {
-        if (context.performed)
+        if (context.performed && Time.timeScale > float.Epsilon)
         {
             isFiring = true;
         }
