@@ -30,10 +30,16 @@ public class BossFishDeathBehavior : DefaultDeathBehavior
     {
         GameManager.Instance.objectiveUI.GetObjective(objeciveName).MarkComplete();
 
+        GameManager.Instance.GetComponent<TrackGameStats>().StopClock();
+
         yield return new WaitForSeconds(2.0f);
 
-        Debug.Log("Victory!");
+        AudioManager.Instance.PlayDialog(AudioManager.SUPPORTNAME, "SC_OutroSupport");
 
-        // TODO end game
+        yield return new WaitForSeconds(5.0f);
+
+        Time.timeScale = 0.0f;
+        // Show UI
+        GameManager.Instance.GetComponent<ShowEndUI>().ShowVictoryScreen();
     }
 }

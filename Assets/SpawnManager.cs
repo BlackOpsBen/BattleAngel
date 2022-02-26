@@ -24,6 +24,8 @@ public class SpawnManager : MonoBehaviour
     [SerializeField] private GameObject finalBoss;
     [SerializeField] private Transform spawnPoint;
 
+    [SerializeField] private string[] dialogOnDestroyObjectives;
+
     private void Awake()
     {
         if (Instance != null)
@@ -53,6 +55,8 @@ public class SpawnManager : MonoBehaviour
     {
         objectivesDestroyed++;
 
+        PlayObjectiveDialog();
+
         baseSpawnTime -= timeDecreasePerObjective;
 
         if (IsObjectiveRemaining())
@@ -62,6 +66,14 @@ public class SpawnManager : MonoBehaviour
         else
         {
             StartCoroutine(BossSequence());
+        }
+    }
+
+    private void PlayObjectiveDialog()
+    {
+        if (dialogOnDestroyObjectives[objectivesDestroyed] != string.Empty)
+        {
+            AudioManager.Instance.PlayDialog(AudioManager.PLAYERNAME, dialogOnDestroyObjectives[objectivesDestroyed], INTERRUPT_MODE: AudioManager.INTERRUPT_SELF);
         }
     }
 
@@ -129,7 +141,7 @@ public class SpawnManager : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
 
         // Player dialog "That's it!"
-        AudioManager.Instance.PlayDialog(AudioManager.PLAYERNAME, "thats-the-last-one", INTERRUPT_MODE: AudioManager.INTERRUPT_SELF);
+        AudioManager.Instance.PlayDialog(AudioManager.PLAYERNAME, "SC_Objective4", INTERRUPT_MODE: AudioManager.INTERRUPT_SELF);
 
         yield return new WaitForSeconds(3.0f);
 
@@ -139,12 +151,12 @@ public class SpawnManager : MonoBehaviour
         yield return new WaitForSeconds(2.0f);
 
         // Player dialog "what was that?"
-        AudioManager.Instance.PlayDialog(AudioManager.PLAYERNAME, "what-was-that", INTERRUPT_MODE: AudioManager.INTERRUPT_SELF);
+        AudioManager.Instance.PlayDialog(AudioManager.PLAYERNAME, "SC_Whatwasthat", INTERRUPT_MODE: AudioManager.INTERRUPT_SELF);
 
         yield return new WaitForSeconds(1.0f);
 
         // Dialog "whatever it is, kill it!
-        AudioManager.Instance.PlayDialog(AudioManager.SUPPORTNAME, "kill_it", INTERRUPT_MODE: AudioManager.INTERRUPT_SELF);
+        AudioManager.Instance.PlayDialog(AudioManager.SUPPORTNAME, "SC_KillIt", INTERRUPT_MODE: AudioManager.INTERRUPT_SELF);
 
         yield return new WaitForSeconds(3.0f);
 
