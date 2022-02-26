@@ -21,6 +21,8 @@ public class ShowEndUI : MonoBehaviour
 
         victoryUI.SetActive(true);
 
+        Cursor.lockState = CursorLockMode.None;
+
         timeText.text = stats.GetTotalTime().ToString();
         deathsText.text = stats.GetTotalDeaths().ToString();
     }

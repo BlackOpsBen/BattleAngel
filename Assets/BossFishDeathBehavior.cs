@@ -34,12 +34,14 @@ public class BossFishDeathBehavior : DefaultDeathBehavior
 
         yield return new WaitForSeconds(2.0f);
 
-        AudioManager.Instance.PlayDialog(AudioManager.SUPPORTNAME, "SC_OutroSupport");
+        AudioManager.Instance.PlayDialog(AudioManager.SUPPORTNAME, "SC_OutroSupport", INTERRUPT_MODE: AudioManager.INTERRUPT_SELF);
 
         yield return new WaitForSeconds(5.0f);
 
         Time.timeScale = 0.0f;
         // Show UI
         GameManager.Instance.GetComponent<ShowEndUI>().ShowVictoryScreen();
+
+
     }
 }

@@ -53,9 +53,9 @@ public class SpawnManager : MonoBehaviour
 
     public void OnObjectiveDestroyed()
     {
-        objectivesDestroyed++;
-
         PlayObjectiveDialog();
+
+        objectivesDestroyed++;
 
         baseSpawnTime -= timeDecreasePerObjective;
 

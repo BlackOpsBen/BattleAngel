@@ -101,6 +101,8 @@ public class Jump : MonoBehaviour
     private void PerformJump()
     {
         rb.AddForce(Vector3.up * jumpStrength, ForceMode.Impulse);
+
+        AudioManager.Instance.PlayDialog(AudioManager.PLAYERNAME, "SC_Jump", INTERRUPT_MODE: AudioManager.INTERRUPT_OVERLAP);
     }
 
     private bool GetIsTouchingGround()

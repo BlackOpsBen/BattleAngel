@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: SC_OutroSupport
   m_EditorClassIdentifier: 
   clipOptions:
-  - {fileID: 8300000, guid: 9a7ad6bce2a51aa44bd626071d008a0b, type: 3}
+  - {fileID: 8300000, guid: a09f9a51d712aac4e95ac918ca05634f, type: 3}
   audioMixerGroup: {fileID: -8353321376742909176, guid: aaf23ad257f6bac4280cd05bb073d69c, type: 2}
   enableModulation: 0
   pitchMin: 0.95

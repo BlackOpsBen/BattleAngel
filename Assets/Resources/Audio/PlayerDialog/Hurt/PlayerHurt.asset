@@ -13,10 +13,15 @@ MonoBehaviour:
   m_Name: PlayerHurt
   m_EditorClassIdentifier: 
   clipOptions:
-  - {fileID: 8300000, guid: 3d0b49b7be82dff46bdfac90830c2ca5, type: 3}
-  - {fileID: 8300000, guid: c80b68f88172dc64597b8149d16d8af8, type: 3}
-  - {fileID: 8300000, guid: 7a1db9696f8aae54d91d142e46754116, type: 3}
-  - {fileID: 8300000, guid: 6ada6076477d20b478fc3dc35f7dfc03, type: 3}
+  - {fileID: 8300000, guid: c6404b9964b57c540955d2e2e185b670, type: 3}
+  - {fileID: 8300000, guid: f31556f132e9acb489163992d4289cfe, type: 3}
+  - {fileID: 8300000, guid: 0eb884da65ec8d446a4a90181d0ecab4, type: 3}
+  - {fileID: 8300000, guid: 0e8ba22c52da89b43ac40dabface9a24, type: 3}
+  - {fileID: 8300000, guid: aff8e463eebb26042be03567b7be3ada, type: 3}
+  - {fileID: 8300000, guid: cb537aa6c397863439b362fef0a82058, type: 3}
+  - {fileID: 8300000, guid: 0b0009b1d7788164e9387cc3e75ed5e0, type: 3}
+  - {fileID: 8300000, guid: 05092a6161b90314da19524ce6452d6d, type: 3}
+  - {fileID: 8300000, guid: 35bf651560565bd46bc41ab08ae813b1, type: 3}
   audioMixerGroup: {fileID: -8353321376742909176, guid: aaf23ad257f6bac4280cd05bb073d69c, type: 2}
   enableModulation: 0
   pitchMin: 0.95
