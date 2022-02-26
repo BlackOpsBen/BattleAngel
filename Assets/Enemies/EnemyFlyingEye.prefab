@@ -128,7 +128,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b9591aa18804a24ca8f700964df598c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHP: 75
+  maxHP: 50
   isPlayer: 0
 --- !u!114 &5326558007619536728
 MonoBehaviour:
