@@ -77,7 +77,9 @@ public class SpawnManager : MonoBehaviour
 
     public void SpawnFinalBoss()
     {
-        Instantiate(finalBoss, spawnPoint.position, Quaternion.identity);
+        GameObject boss = Instantiate(finalBoss, spawnPoint.position, Quaternion.identity);
+
+
     }
 
     private void Spawn(GameObject enemyType)
