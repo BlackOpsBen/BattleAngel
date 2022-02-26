@@ -1191,6 +1191,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1426012576455030509, guid: dd43381b5a98b0e43bc4767fc41a2572, type: 3}
+      propertyPath: stopAction
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9070751517080377184, guid: dd43381b5a98b0e43bc4767fc41a2572, type: 3}
       propertyPath: m_Name
       value: FireDamagePFX

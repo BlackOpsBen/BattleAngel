@@ -7,6 +7,7 @@ using UnityEngine.Audio;
 public class AudioManager : MonoBehaviour
 {
     public static string PLAYERNAME = "Player";
+    public static string SUPPORTNAME = "Support";
     public static AudioManager Instance { get; private set; }
 
     /// <summary>

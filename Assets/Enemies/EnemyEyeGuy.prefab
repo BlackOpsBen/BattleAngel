@@ -122,7 +122,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   firePFX: {fileID: 7650973789174111740}
-  targetParentHealth: {fileID: 0}
+  targetParentHealth: {fileID: 7061533042033194303}
 --- !u!1 &137147872581705230
 GameObject:
   m_ObjectHideFlags: 0
@@ -406,6 +406,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   talkSoundName: SC_EyeGuy_Talk
+  is3D: 0
 --- !u!54 &4547562255569385283
 Rigidbody:
   m_ObjectHideFlags: 0

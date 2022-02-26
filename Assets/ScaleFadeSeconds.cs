@@ -29,7 +29,6 @@ public class ScaleFadeSeconds : MonoBehaviour
 
     public void SetDigit(int digit)
     {
-        Debug.Log("Digit: " + digit);
         seconds.text = digit.ToString();
         seconds.fontSize = startSize;
         seconds.color = Color.white;

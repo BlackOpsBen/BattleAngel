@@ -61,7 +61,7 @@ public class SpawnManager : MonoBehaviour
         }
         else
         {
-            SpawnFinalBoss();
+            StartCoroutine(BossSequence());
         }
     }
 
@@ -78,8 +78,6 @@ public class SpawnManager : MonoBehaviour
     public void SpawnFinalBoss()
     {
         GameObject boss = Instantiate(finalBoss, spawnPoint.position, Quaternion.identity);
-
-        boss.AddComponent<FinalBoss>();
     }
 
     private void Spawn(GameObject enemyType)
@@ -119,5 +117,40 @@ public class SpawnManager : MonoBehaviour
     private bool IsObjectiveRemaining()
     {
         return objectivesDestroyed < spawnAreas.Length;
+    }
+
+    private IEnumerator BossSequence()
+    {
+        PlayMusic playMusic = AudioManager.Instance.GetComponent<PlayMusic>();
+
+        // lower music volume
+        playMusic.LowerVolume();
+
+        yield return new WaitForSeconds(0.5f);
+
+        // Player dialog "That's it!"
+        AudioManager.Instance.PlayDialog(AudioManager.PLAYERNAME, "thats-the-last-one", INTERRUPT_MODE: AudioManager.INTERRUPT_SELF);
+
+        yield return new WaitForSeconds(3.0f);
+
+        // Weird noise
+        AudioManager.Instance.PlaySound("strange_noise", "SFX");
+
+        yield return new WaitForSeconds(2.0f);
+
+        // Player dialog "what was that?"
+        AudioManager.Instance.PlayDialog(AudioManager.PLAYERNAME, "what-was-that", INTERRUPT_MODE: AudioManager.INTERRUPT_SELF);
+
+        yield return new WaitForSeconds(1.0f);
+
+        // Dialog "whatever it is, kill it!
+        AudioManager.Instance.PlayDialog(AudioManager.SUPPORTNAME, "kill_it", INTERRUPT_MODE: AudioManager.INTERRUPT_SELF);
+
+        yield return new WaitForSeconds(3.0f);
+
+        playMusic.RestoreVolume();
+        // Start boss music
+        playMusic.StartBossMusic();
+        SpawnFinalBoss();
     }
 }
