@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,6 +10,13 @@ public class PerlinMovement : MonoBehaviour
     [SerializeField] private float amplitude = 1.0f;
     [SerializeField] private float ySnapStrength = 1.0f;
     [SerializeField] private float ySnapHeight = 3.5f;
+    private Rigidbody rb;
+
+    private void Awake()
+    {
+        rb = GetComponent<Rigidbody>();
+    }
+    //[SerializeField] private LayerMask environmentLayerMask;
     private void Update()
     {
         float perlinX = Mathf.PerlinNoise(seed, Time.time * frequency);
@@ -25,6 +33,16 @@ public class PerlinMovement : MonoBehaviour
         Vector3 ySnappedPos = new Vector3(transform.position.x, lerpYPos, transform.position.z);
         Vector3 newPos = ySnappedPos + (perlinOffset * Time.deltaTime * amplitude);
 
-        transform.position = newPos;
+        rb.MovePosition(newPos);
     }
+
+    /*private float GetFloorHeight()
+    {
+        RaycastHit hit;
+        Physics.Raycast(transform.position, Vector3.down, out hit, 1000.0f, environmentLayerMask);
+
+        Debug.Log("Hit y pos: " + hit.point.y);
+
+        return transform.position.y - hit.point.y;
+    }*/
 }

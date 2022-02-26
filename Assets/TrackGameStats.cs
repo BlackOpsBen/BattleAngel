@@ -22,7 +22,6 @@ public class TrackGameStats : MonoBehaviour
         int seconds = (int)time - 60 * minutes;
         float fractionalSecond = time - minutes * 60 - seconds;
         int decaseconds = (int)(fractionalSecond * 100);
-        Debug.Log(Time.time);
         return string.Format("{0:00}:{1:00}:{2:00}", minutes, seconds, decaseconds);
     }
 
