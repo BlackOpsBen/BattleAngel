@@ -16,6 +16,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private HudCounter ammoCounter;
     [SerializeField] private HudCounter healthCounter;
     [SerializeField] private Transform playerPosTracker;
+    [SerializeField] public Pool hitPFXPool;
 
     public ObjectiveUI objectiveUI;
 

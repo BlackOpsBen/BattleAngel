@@ -76,7 +76,7 @@ public class Shoot : MonoBehaviour
                 }
                 else
                 {
-                    AudioManager.Instance.PlaySound("gun_click", transform);
+                    AudioManager.Instance.PlaySound("gun_click_v2", transform);
                 }
             }
             else
@@ -166,7 +166,10 @@ public class Shoot : MonoBehaviour
 
             DealDamage(hit);
 
-            Instantiate(impactPFX, hit.point, Quaternion.LookRotation(hit.normal));
+            //Instantiate(impactPFX, hit.point, Quaternion.LookRotation(hit.normal));
+            GameObject hitPFX = GameManager.Instance.hitPFXPool.GetNext();
+            hitPFX.transform.position = hit.point;
+            hitPFX.transform.rotation = Quaternion.LookRotation(hit.normal);
         }
     }
 
