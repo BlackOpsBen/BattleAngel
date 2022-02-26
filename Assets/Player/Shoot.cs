@@ -50,21 +50,7 @@ public class Shoot : MonoBehaviour
     {
         if (isFiring)
         {
-            if (limitedAmmo)
-            {
-                if (ammo.GetHasAmmo())
-                {
-                    AttemptShoot();
-                }
-                else
-                {
-                    // TODO play out of ammo dialog & click
-                }
-            }
-            else
-            {
-                AttemptShoot();
-            }
+            AttemptShoot();
         }
         else
         {
@@ -82,7 +68,21 @@ public class Shoot : MonoBehaviour
         {
             shotTimer = 0.0f;
 
-            PerformShot();
+            if (limitedAmmo)
+            {
+                if (ammo.GetHasAmmo())
+                {
+                    PerformShot();
+                }
+                else
+                {
+                    AudioManager.Instance.PlaySound("gun_click", transform);
+                }
+            }
+            else
+            {
+                PerformShot();
+            }
         }
     }
 

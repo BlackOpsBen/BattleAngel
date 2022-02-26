@@ -34,7 +34,7 @@ public class EyeStompAttack : MonoBehaviour, IToggleWhenRevealed
 
     private void Update()
     {
-        SetIsAttacking(); // TODO refactor so Enemy Attacks share same script
+        SetIsAttacking();
         SetMoveSpeed();
     }
 

@@ -6,6 +6,7 @@ public class HitFX : MonoBehaviour
 {
     [SerializeField] private List<GameObject> hitPfx = new List<GameObject>();
     [SerializeField] private string hitSoundName;
+    [SerializeField] private bool is3DSound = false;
 
     public void Play(Vector3 position, Quaternion rotation)
     {
@@ -16,6 +17,13 @@ public class HitFX : MonoBehaviour
             gameObj.GetComponent<ParticleSystem>().Play();
         }
 
-        AudioManager.Instance.PlaySound(hitSoundName);
+        if (is3DSound)
+        {
+            AudioManager.Instance.PlaySound(hitSoundName, transform);
+        }
+        else
+        {
+            AudioManager.Instance.PlaySound(hitSoundName);
+        }
     }    
 }

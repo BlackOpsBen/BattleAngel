@@ -8,6 +8,7 @@ public class GetsWounded : MonoBehaviour
 {
     [SerializeField] private List<LimbWoundHealth> limbWoundHealths = new List<LimbWoundHealth>();
     [SerializeField] private ParticleSystem cryPFX;
+    [SerializeField] private string woundedSoundName = "SC_EuyGuy_Hurt";
 
     private TagToggleManager tagToggle;
 
@@ -24,6 +25,8 @@ public class GetsWounded : MonoBehaviour
         animator.SetTrigger("Wounded");
 
         tagToggle.SetIsWounded(true);
+
+        AudioManager.Instance.PlaySound(woundedSoundName);
     }
 
     public void OnRecoveredEvent()

@@ -66,6 +66,7 @@ MonoBehaviour:
   hitPfx:
   - {fileID: 267146769853580079}
   hitSoundName: SC_BloodHit
+  is3DSound: 0
 --- !u!114 &7061533042033194303
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -141,6 +142,7 @@ GameObject:
   - component: {fileID: 6632919432529895456}
   - component: {fileID: 3526089056900627484}
   - component: {fileID: 7306696831891825700}
+  - component: {fileID: 8138918467269393165}
   m_Layer: 6
   m_Name: EnemyEyeGuy
   m_TagString: Enemy
@@ -355,6 +357,7 @@ MonoBehaviour:
   - {fileID: 4679056025645327227}
   - {fileID: 769782514331345270}
   cryPFX: {fileID: 2347739146296710924}
+  woundedSoundName: SC_EuyGuy_Hurt
 --- !u!114 &3526089056900627484
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -390,6 +393,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   color: {r: 1, g: 0, b: 0, a: 1}
   scale: 1.25
+--- !u!114 &8138918467269393165
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 137147872581705230}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5ae81225807eca40b48cf161c92b31b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  talkSoundName: SC_EyeGuy_Talk
 --- !u!54 &4547562255569385283
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -598,6 +614,7 @@ MonoBehaviour:
   hitPfx:
   - {fileID: 267146769853580079}
   hitSoundName: SC_BloodHit
+  is3DSound: 0
 --- !u!114 &4679056025645327227
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1021,6 +1038,7 @@ MonoBehaviour:
   hitPfx:
   - {fileID: 267146769853580079}
   hitSoundName: SC_BloodHit
+  is3DSound: 0
 --- !u!114 &769782514331345270
 MonoBehaviour:
   m_ObjectHideFlags: 0

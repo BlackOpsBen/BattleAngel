@@ -10,12 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 304a287341fee08498f98aba2aa4b5d8, type: 3}
-  m_Name: SC_EnemyDeath
+  m_Name: SC_EuyGuy_Hurt
   m_EditorClassIdentifier: 
   clipOptions:
-  - {fileID: 8300000, guid: 04b2a63d0cb6efe4eb8448eabd0dc041, type: 3}
-  - {fileID: 8300000, guid: 8d19aa31e571b1c43ad119de5b1ad244, type: 3}
-  audioMixerGroup: {fileID: 6361220419512253372, guid: aaf23ad257f6bac4280cd05bb073d69c, type: 2}
+  - {fileID: 8300000, guid: 48800cc1135e82e469306386a8569b01, type: 3}
+  - {fileID: 8300000, guid: 99979ea900690b941a4578ddbafae976, type: 3}
+  - {fileID: 8300000, guid: 8e07e8880e163a94cb935b0af1b9fe5d, type: 3}
+  audioMixerGroup: {fileID: 4341858783511570920, guid: aaf23ad257f6bac4280cd05bb073d69c, type: 2}
   enableModulation: 1
   pitchMin: 0.95
   pitchMax: 1.05

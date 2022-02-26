@@ -51,6 +51,8 @@ public class ShootLaserEye : MonoBehaviour, IToggleWhenRevealed
             if (isFiring)
             {
                 SetFiring(false);
+
+                AudioManager.Instance.PlaySound("SC_EyeBall_Talk", transform);
             }
         }
     }
@@ -68,8 +70,6 @@ public class ShootLaserEye : MonoBehaviour, IToggleWhenRevealed
             laserPFX.Stop();
             firingSound.Stop();
         }
-
-        Debug.Log("Eye firing = " + isFiring);
     }
 
     private void OnDisable()

@@ -503,7 +503,3 @@ public class SourcePool
         sources.Remove(source);
     }
 }
-
-// TODO add copyright and donation info and webpage
-
-// TODO make PlayDialog Clip/Cue agnostic
