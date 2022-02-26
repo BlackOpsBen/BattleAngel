@@ -15,15 +15,13 @@ public class PlayMusic : MonoBehaviour
 
     private int currentTrack;
 
-    void Start()
+    void Awake()
     {
         currentTrack = UnityEngine.Random.Range(0, mainAudioSources.Count);
 
         StartMusic();
 
         mixer.GetFloat("Music", out maxLevel);
-
-        Debug.Log("Music volume: " + maxLevel);
     }
 
     private void Update()

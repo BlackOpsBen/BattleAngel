@@ -17,7 +17,6 @@ public class DefaultDeathBehavior : MonoBehaviour, IDie
     {
         foreach (GameObject deadObject in deadObjects)
         {
-            Debug.Log(deadObject.name + " is being disabled.");
             deadObject.SetActive(false);
         }
     }
