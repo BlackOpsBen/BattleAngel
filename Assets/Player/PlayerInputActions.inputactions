@@ -304,6 +304,55 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "Debug",
+            "id": "91f88369-b108-4c78-9ae1-afd3b2821bd8",
+            "actions": [
+                {
+                    "name": "MoveCinemachineXAxis",
+                    "type": "Value",
+                    "id": "c67e6914-0a63-47c6-b34b-0231fdbb2d62",
+                    "expectedControlType": "Axis",
+                    "processors": "",
+                    "interactions": ""
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "QE",
+                    "id": "14e3f651-2a1a-485e-956d-b88a7ed04293",
+                    "path": "1DAxis",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "MoveCinemachineXAxis",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "negative",
+                    "id": "b4d7d70f-d62c-4443-8574-488eb7a24c12",
+                    "path": "<Keyboard>/q",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "MoveCinemachineXAxis",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "positive",
+                    "id": "8f102dc4-76d4-43c3-9ba7-7805959daa5f",
+                    "path": "<Keyboard>/e",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse;Gamepad",
+                    "action": "MoveCinemachineXAxis",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                }
+            ]
         }
     ],
     "controlSchemes": [

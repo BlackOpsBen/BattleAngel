@@ -46,6 +46,7 @@ public class GameManager : MonoBehaviour
     private void Update()
     {
         playerPosTracker.position = playerInstance.transform.position;
+        playerPosTracker.rotation = playerInstance.transform.rotation;
     }
 
     // Start is called before the first frame update

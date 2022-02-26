@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
+using UnityEngine.InputSystem;
+using System;
 
 public class CineAutoRotate : MonoBehaviour
 {
@@ -10,6 +12,9 @@ public class CineAutoRotate : MonoBehaviour
     [SerializeField] private float deccelerationTime = 1.0f;
     private float rotationSpeedPercent = 0.0f;
     private CinemachineFreeLook freeLookComponent;
+
+    private float debugAxis;
+    public float debugSpeed = 2.0f;
 
     private void Start()
     {
@@ -21,7 +26,9 @@ public class CineAutoRotate : MonoBehaviour
         Movement movement = GameManager.Instance.GetPlayerInstance().GetComponent<Movement>();
         UpdateRotationSpeedPercent(movement);
         //RotateTowardView(movement);
-        UpdateFreeLook();
+        UpdateFreeLook(movement);
+
+        freeLookComponent.m_XAxis.Value += debugAxis * Time.deltaTime * debugSpeed;
     }
 
     private void UpdateRotationSpeedPercent(Movement movement)
@@ -38,14 +45,34 @@ public class CineAutoRotate : MonoBehaviour
         rotationSpeedPercent = Mathf.Clamp01(rotationSpeedPercent);
     }
 
-    private void RotateTowardView(Movement movement)
+    /*private void RotateTowardView(Movement movement)
     {
         Quaternion facingRotation = Quaternion.LookRotation(movement.transform.forward);
         transform.rotation = Quaternion.Slerp(transform.rotation, facingRotation, maxRotationSpeed * rotationSpeedPercent * Time.deltaTime);
+    }*/
+
+    private void UpdateFreeLook(Movement movement)
+    {
+        Vector3 fromDirection = transform.forward;
+        Vector3 toDirection = movement.transform.forward;
+
+        float signedAngle = Vector3.SignedAngle(fromDirection, toDirection, Vector3.up);
+        Debug.Log("Signed Angle: " + signedAngle);
+        Debug.Log("Axis value: " + freeLookComponent.m_XAxis.Value);
+
+        //float lerpedValue = Mathf.Lerp(freeLookComponent.m_XAxis.Value, GetNearest(signedAngle, signedAngle + 360), maxRotationSpeed * rotationSpeedPercent * Time.deltaTime);
+
+        Quaternion axisQuat = Quaternion.Euler(0.0f, freeLookComponent.m_XAxis.Value, 0.0f);
+        Quaternion signedQuat = Quaternion.Euler(0.0f, signedAngle, 0.0f);
+        Quaternion lerpedQuat = Quaternion.Slerp(axisQuat, signedQuat, maxRotationSpeed * rotationSpeedPercent * Time.deltaTime);
+
+        float lerpedValue = lerpedQuat.eulerAngles.y;
+
+        freeLookComponent.m_XAxis.Value = lerpedValue;
     }
 
-    private void UpdateFreeLook()
+    public void OnMoveXAxis(InputAction.CallbackContext context)
     {
-
+        debugAxis = context.ReadValue<float>();
     }
 }
