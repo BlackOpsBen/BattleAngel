@@ -18,12 +18,17 @@ public class ShowEndUI : MonoBehaviour
     public void ShowVictoryScreen()
     {
         TrackGameStats stats = GetComponent<TrackGameStats>();
+        PauseMenu pause = GetComponent<PauseMenu>();
+        pause.SetPause(false);
+        pause.SetCanBePaused(false);
 
         victoryUI.SetActive(true);
 
         Cursor.lockState = CursorLockMode.None;
 
-        timeText.text = stats.GetTotalTime().ToString();
+        timeText.text = stats.GetTotalTimeString();
         deathsText.text = stats.GetTotalDeaths().ToString();
+
+        Time.timeScale = 0.0f;
     }
 }

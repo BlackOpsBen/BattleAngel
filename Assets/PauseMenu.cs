@@ -8,6 +8,8 @@ public class PauseMenu : MonoBehaviour
 
     private bool isPaused = false;
 
+    private bool canBePaused = true;
+
     private void Start()
     {
         SetPause(false);
@@ -15,26 +17,34 @@ public class PauseMenu : MonoBehaviour
 
     public void SetPause(bool value)
     {
-        if (value)
+        if (canBePaused)
         {
-            Cursor.lockState = CursorLockMode.None;
+            if (value)
+            {
+                Cursor.lockState = CursorLockMode.None;
 
-            Time.timeScale = 0.0f;
+                Time.timeScale = 0.0f;
+            }
+            else
+            {
+                Cursor.lockState = CursorLockMode.Locked;
+
+                Time.timeScale = 1.0f;
+            }
+
+            pauseUI.SetActive(value);
+
+            isPaused = value;
         }
-        else
-        {
-            Cursor.lockState = CursorLockMode.Locked;
-
-            Time.timeScale = 1.0f;
-        }
-        
-        pauseUI.SetActive(value);
-
-        isPaused = value;
     }
 
     public bool GetIsPaused()
     {
         return isPaused;
+    }
+
+    public void SetCanBePaused(bool value)
+    {
+        canBePaused = value;
     }
 }

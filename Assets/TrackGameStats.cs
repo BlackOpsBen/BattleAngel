@@ -47,9 +47,14 @@ public class TrackGameStats : MonoBehaviour
         isCounting = false;
     }
 
-    public float GetTotalTime()
+    public float GetTotalTimeFloat()
     {
         return totalTime;
+    }
+
+    public string GetTotalTimeString()
+    {
+        return timeText.text;
     }
 
     public int GetTotalDeaths()

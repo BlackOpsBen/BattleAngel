@@ -41,7 +41,5 @@ public class BossFishDeathBehavior : DefaultDeathBehavior
         Time.timeScale = 0.0f;
         // Show UI
         GameManager.Instance.GetComponent<ShowEndUI>().ShowVictoryScreen();
-
-
     }
 }
