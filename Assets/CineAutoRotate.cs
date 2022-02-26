@@ -57,10 +57,6 @@ public class CineAutoRotate : MonoBehaviour
         Vector3 toDirection = movement.transform.forward;
 
         float signedAngle = Vector3.SignedAngle(fromDirection, toDirection, Vector3.up);
-        Debug.Log("Signed Angle: " + signedAngle);
-        Debug.Log("Axis value: " + freeLookComponent.m_XAxis.Value);
-
-        //float lerpedValue = Mathf.Lerp(freeLookComponent.m_XAxis.Value, GetNearest(signedAngle, signedAngle + 360), maxRotationSpeed * rotationSpeedPercent * Time.deltaTime);
 
         Quaternion axisQuat = Quaternion.Euler(0.0f, freeLookComponent.m_XAxis.Value, 0.0f);
         Quaternion signedQuat = Quaternion.Euler(0.0f, signedAngle, 0.0f);
