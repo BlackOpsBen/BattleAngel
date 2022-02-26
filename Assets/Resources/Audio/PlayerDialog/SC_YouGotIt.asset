@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 304a287341fee08498f98aba2aa4b5d8, type: 3}
-  m_Name: SC_IntroSupport
+  m_Name: SC_YouGotIt
   m_EditorClassIdentifier: 
   clipOptions:
-  - {fileID: 8300000, guid: 16608159727c2c8439af9a8a041acdd2, type: 3}
+  - {fileID: 8300000, guid: ec2e5f36dbbb3db4683450726fe1b2ab, type: 3}
   audioMixerGroup: {fileID: -8353321376742909176, guid: aaf23ad257f6bac4280cd05bb073d69c, type: 2}
   enableModulation: 0
   pitchMin: 0.95

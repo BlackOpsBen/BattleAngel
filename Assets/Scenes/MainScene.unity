@@ -2579,6 +2579,7 @@ GameObject:
   - component: {fileID: 368336024}
   - component: {fileID: 368336025}
   - component: {fileID: 368336026}
+  - component: {fileID: 368336027}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -2683,6 +2684,18 @@ MonoBehaviour:
   victoryUI: {fileID: 1515073807}
   timeText: {fileID: 1646439838}
   deathsText: {fileID: 154746372}
+--- !u!114 &368336027
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 368336020}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95ba1e4bc1b64134ca3cc0eed9c915a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &369423612 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4540817480375443809, guid: a3ed48ceca39b8b4b8aaa863b3e4e37e, type: 3}
@@ -13008,7 +13021,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1570169265}
-  m_LocalRotation: {x: 0.2236205, y: 0.000000029246817, z: -0.0000000067101125, w: 0.9746763}
+  m_LocalRotation: {x: 0.22362052, y: -0.000000003407701, z: 7.818308e-10, w: 0.9746763}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
