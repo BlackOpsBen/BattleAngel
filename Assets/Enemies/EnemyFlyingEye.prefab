@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 3264173346571722274}
   - component: {fileID: 2776598085872849514}
   - component: {fileID: 3227184948982862819}
+  - component: {fileID: 2340971122237151583}
   m_Layer: 6
   m_Name: EnemyFlyingEye
   m_TagString: Target
@@ -373,6 +374,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   talkSoundName: SC_EyeBall_Talk
   is3D: 1
+--- !u!114 &2340971122237151583
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5326558007619536720}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 453fbdbd08a2af547b95fcb1782a4057, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageAmount: 5
 --- !u!1 &6425736804198496555
 GameObject:
   m_ObjectHideFlags: 0

@@ -79,8 +79,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   checkboxImage: {fileID: 1423441481037362723}
   text: {fileID: 1423441480612850844}
-  boxChecked: {fileID: 0}
-  boxUnchecked: {fileID: 0}
+  boxChecked: {fileID: 21300000, guid: 834816e412c7316458ac248c6162ee2c, type: 3}
+  boxUnchecked: {fileID: 21300000, guid: ce94ebf80a7415742a10e66775a07422, type: 3}
+  name: 
 --- !u!1 &1423441480612850846
 GameObject:
   m_ObjectHideFlags: 0
