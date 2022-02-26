@@ -4,15 +4,17 @@ using UnityEngine;
 
 public class FinalBoss : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private string objeciveName = "???";
+
+    private void Start()
     {
-        
+        GameManager.Instance.objectiveUI.NewObjective(objeciveName, "");
     }
 
-    // Update is called once per frame
-    void Update()
+    public void Defeat()
     {
-        
+        GameManager.Instance.objectiveUI.GetObjective(objeciveName).MarkComplete();
+
+        // TODO end game
     }
 }

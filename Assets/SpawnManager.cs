@@ -79,7 +79,7 @@ public class SpawnManager : MonoBehaviour
     {
         GameObject boss = Instantiate(finalBoss, spawnPoint.position, Quaternion.identity);
 
-
+        boss.AddComponent<FinalBoss>();
     }
 
     private void Spawn(GameObject enemyType)
