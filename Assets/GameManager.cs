@@ -17,12 +17,15 @@ public class GameManager : MonoBehaviour
     [SerializeField] private HudCounter healthCounter;
     [SerializeField] private Transform playerPosTracker;
     [SerializeField] public Pool hitPFXPool;
+    private TrackGameStats trackGameStats;
 
     public ObjectiveUI objectiveUI;
 
     public int initialNumDegenerators;
     public int numDestroyed = 0;
     public string degeneratorObjectiveName = "Destroy the Degenerators";
+
+    private int numDeaths = 0;
 
     private void Awake()
     {
@@ -42,6 +45,8 @@ public class GameManager : MonoBehaviour
 
         initialNumDegenerators = FindObjectsOfType<ObjectiveDeathBehavior>().Length;
         objectiveUI.NewObjective(degeneratorObjectiveName, " ( 0 / 4 )");
+
+        trackGameStats = GetComponent<TrackGameStats>();
     }
 
     private void Update()
@@ -91,6 +96,9 @@ public class GameManager : MonoBehaviour
 
     public void Respawn(float delay)
     {
+        numDeaths++;
+        trackGameStats.SetDeathsText(numDeaths);
+        
         StartCoroutine(DelayedRespawn(delay));
     }
 
