@@ -10,14 +10,18 @@ public class BossFishDeathBehavior : DefaultDeathBehavior
     [SerializeField] private PlayAllSubPFX deathPFX;
     [SerializeField] private ShakePreset shakePreset;
 
-    private void Start()
+    public override void Start()
     {
+        base.Start();
+
         GameManager.Instance.objectiveUI.NewObjective(objeciveName, "");
     }
 
     public override void Die()
     {
         deathPFX.PlayAll();
+
+        GetComponent<Rigidbody>().isKinematic = true;
 
         Shaker.ShakeAll(shakePreset);
 

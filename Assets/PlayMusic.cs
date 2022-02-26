@@ -44,6 +44,11 @@ public class PlayMusic : MonoBehaviour
         finalBossMusic.Play();
     }
 
+    public void StopBossMusic()
+    {
+        finalBossMusic.Stop();
+    }
+
     private void StartMusic()
     {
         currentTrack = (currentTrack + 1) % mainAudioSources.Count;

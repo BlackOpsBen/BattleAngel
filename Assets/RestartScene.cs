@@ -7,6 +7,8 @@ public class RestartScene : MonoBehaviour
 {
     public void OnRestartScene()
     {
+        AudioManager.Instance.GetComponent<PlayMusic>().StopBossMusic();
+
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }

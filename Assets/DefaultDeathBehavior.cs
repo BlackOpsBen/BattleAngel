@@ -13,10 +13,11 @@ public class DefaultDeathBehavior : MonoBehaviour, IDie
     [SerializeField] private float explosiveForce = 1f;
     [SerializeField] private float explosiveRadius = 5f;
 
-    private void Start()
+    public virtual void Start()
     {
         foreach (GameObject deadObject in deadObjects)
         {
+            Debug.Log(deadObject.name + " is being disabled.");
             deadObject.SetActive(false);
         }
     }
