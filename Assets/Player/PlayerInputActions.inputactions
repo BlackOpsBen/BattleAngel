@@ -313,6 +313,17 @@
                 },
                 {
                     "name": "",
+                    "id": "bc19a136-8074-4d60-90d5-3f8df59c2e09",
+                    "path": "<Mouse>/rightButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "Jump",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "d9e1a31d-4d84-47a0-aac0-80439a31c927",
                     "path": "<Keyboard>/escape",
                     "interactions": "",
