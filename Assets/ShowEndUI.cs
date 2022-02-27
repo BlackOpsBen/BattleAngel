@@ -26,8 +26,8 @@ public class ShowEndUI : MonoBehaviour
 
         Cursor.lockState = CursorLockMode.None;
 
-        timeText.text = stats.GetTotalTimeString();
-        deathsText.text = stats.GetTotalDeaths().ToString();
+        timeText.text = "Time: " + stats.GetTotalTimeString();
+        deathsText.text = "Deaths: " + stats.GetTotalDeaths().ToString();
 
         Time.timeScale = 0.0f;
     }
